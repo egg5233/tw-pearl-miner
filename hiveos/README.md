@@ -1,0 +1,49 @@
+# tw-pearl-miner on HiveOS
+
+A HiveOS **Custom Miner** package for the Pearl GPU miner. Works on any Ampere-or-newer
+NVIDIA GPU (RTX 30/40/50, A100, H100). The pool is built in (`pearl.tw-pool.com:50001`).
+
+## Install
+
+1. In HiveOS, open your worker → **Flight Sheets** → create a new flight sheet (or **Wallets** first).
+2. **Add a Custom Miner** (Flight Sheet → Miner → `+` → *Setup Miner Config* → **Custom**):
+   - **Miner name:** `tw-pearl-miner`
+   - **Installation URL:**
+     ```
+     https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner.tar.gz
+     ```
+     (or the raw path `https://github.com/egg5233/tw-pearl-miner/raw/main/hiveos/tw-pearl-miner.tar.gz`)
+   - **Hash algorithm:** `pearl` (free text — informational only)
+3. Fill the flight-sheet fields:
+   | Field | Value |
+   |-------|-------|
+   | **Wallet and worker template** | your `prl1...` payout address |
+   | **Pool URL** | *leave blank* (built-in pool) — or `host:port` to override |
+   | **Pass** | `x` |
+   | **Extra config arguments** | *(optional)* env lines, e.g. `POOL_TLS=0` for a plaintext pool |
+4. Apply the flight sheet to the rig. HiveOS downloads the package, installs it to
+   `/hive/miners/custom/tw-pearl-miner/`, and starts mining.
+
+The worker name is taken from the rig automatically; hashrate (in TH/s) and accepted/rejected
+shares show up on the HiveOS dashboard.
+
+## Package contents
+```
+tw-pearl-miner/
+  pearl-gpu-miner       miner binary (fat: sm_80/86/89/90/120a + PTX)
+  libpearlkernel.so     CUDA kernel
+  libcudart.so.13       CUDA runtime
+  h-manifest.conf       miner metadata
+  h-config.sh           builds the run config from the flight sheet
+  h-run.sh              launches the miner
+  h-stats.sh            reports hashrate/shares to HiveOS
+```
+
+## Notes
+- **GPU support:** Ampere or newer (needs the SM80 int8 tensor cores). Pre-Ampere (GTX 10xx /
+  RTX 20xx) is **not** supported.
+- **Driver:** a CUDA-13-capable driver (≥ 580). HiveOS images with recent NVIDIA drivers work.
+- **TLS:** the connection is TLS by default. If your pool endpoint is plaintext, add `POOL_TLS=0`
+  to *Extra config arguments*.
+- **Hashrate units:** the miner's metric is in TH/s; HiveOS displays it scaled (the `total khs`
+  field is `TH/s × 1e9`).
