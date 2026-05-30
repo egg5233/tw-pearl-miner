@@ -43,7 +43,10 @@ tw-pearl-miner/
 ## Notes
 - **GPU support:** Ampere or newer (needs the SM80 int8 tensor cores). Pre-Ampere (GTX 10xx /
   RTX 20xx) is **not** supported.
-- **Driver:** a CUDA-13-capable driver (≥ 580). HiveOS images with recent NVIDIA drivers work.
+- **Driver:** **≥ 580.65** (Linux) — a CUDA 13 capable driver. Update on the rig via the HiveOS web
+  UI (worker → ⋮ → *Upgrade* / NVIDIA driver) or Hive Shell `nvidia-driver-update`. If the miner log
+  shows `cudaGetDeviceCount returned 0` / `pk_init failed`, the driver is **too old** — `nvidia-smi`
+  must report "CUDA Version: 13.0" or higher.
 - **TLS:** the connection is TLS by default. If your pool endpoint is plaintext, add `POOL_TLS=0`
   to *Extra config arguments*.
 - **Hashrate units:** the miner's metric is in TH/s; HiveOS displays it scaled (the `total khs`

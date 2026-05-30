@@ -54,9 +54,14 @@ The miner auto-tunes the best matrix shape for your card at startup, shows a per
 line, mines until you stop it (Ctrl+C), and auto-reconnects through pool restarts / network blips.
 
 ### Requirements
-- NVIDIA GPU, **Ampere or newer**.
-- A **CUDA-13-capable driver** (≥ 580). Windows: 580+; Linux/HiveOS: a recent NVIDIA driver.
+- **NVIDIA GPU, Ampere or newer** (RTX 30 / 40 / 50, A100, H100). Pre-Ampere (GTX 10xx / RTX 20xx) is not supported.
+- **NVIDIA driver ≥ 580.65 (Linux) / ≥ 580.88 (Windows)** — a CUDA 13 capable driver. *Newer is always fine; the simplest is to install the latest.*
 - Nothing else to install — the CUDA runtime ships in the bundle.
+
+> **Driver too old?** If the miner exits right away with `cudaGetDeviceCount returned 0` or
+> `pk_init failed`, your driver is below the minimum above — **update the driver** (this is a driver
+> version issue, not a GPU problem). Check yours with `nvidia-smi`; the "CUDA Version" shown must be
+> **13.0 or higher**.
 
 ### Connection / TLS
 The pool connection is **TLS** by default. For a plaintext endpoint, set `POOL_TLS=0`
