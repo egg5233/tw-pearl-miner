@@ -21,7 +21,7 @@ NVIDIA GPU (RTX 30/40/50, A100, H100). The pool is built in (`pearl.tw-pool.com:
    | **Wallet and worker template** | your `prl1...` payout address |
    | **Pool URL** | *leave blank* (built-in pool) — or `host:port` to override |
    | **Pass** | `x` |
-   | **Extra config arguments** | *(optional)* env lines, e.g. `POOL_TLS=0` for a plaintext pool |
+   | **Extra config arguments** | *(optional)* extra env lines, one per line |
 4. Apply the flight sheet to the rig. HiveOS downloads the package, installs it to
    `/hive/miners/custom/tw-pearl-miner/`, and starts mining.
 
@@ -47,7 +47,6 @@ tw-pearl-miner/
   UI (worker → ⋮ → *Upgrade* / NVIDIA driver) or Hive Shell `nvidia-driver-update`. If the miner log
   shows `cudaGetDeviceCount returned 0` / `pk_init failed`, the driver is **too old** — `nvidia-smi`
   must report "CUDA Version: 13.0" or higher.
-- **TLS:** the connection is TLS by default. If your pool endpoint is plaintext, add `POOL_TLS=0`
-  to *Extra config arguments*.
+- **TLS:** the pool connection is encrypted with TLS.
 - **Hashrate units:** the miner's metric is in TH/s; HiveOS displays it scaled (the `total khs`
   field is `TH/s × 1e9`).

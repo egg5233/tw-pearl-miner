@@ -9,8 +9,6 @@
 # ---- your settings ----
 WALLET="YOUR_PRL_WALLET_ADDRESS"
 WORKER="${1:-$(hostname -s)}"
-# Uncomment for a plaintext pool (no TLS):
-# export POOL_TLS=0
 # -----------------------
 
 cd "$(dirname "$0")"

@@ -9,8 +9,6 @@ setlocal
 REM ---- your settings ----
 set "WALLET=YOUR_PRL_WALLET_ADDRESS"
 set "WORKER=%COMPUTERNAME%"
-REM Uncomment for a plaintext pool (no TLS):
-REM set "POOL_TLS=0"
 REM -----------------------
 
 cd /d "%~dp0"

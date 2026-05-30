@@ -64,8 +64,7 @@ line, mines until you stop it (Ctrl+C), and auto-reconnects through pool restart
 > **13.0 or higher**.
 
 ### Connection / TLS
-The pool connection is **TLS** by default. For a plaintext endpoint, set `POOL_TLS=0`
-(env var / `Extra config arguments` on HiveOS).
+The pool connection is encrypted with **TLS**.
 
 ---
 Built from the Pearl Rust miner (private source repo). One binary, every supported GPU.
