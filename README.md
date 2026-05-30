@@ -9,11 +9,13 @@ is not supported.
 
 ## Downloads
 
-| Platform | File |
-|----------|------|
-| Windows  | [`windows/tw-pearl-miner-windows.zip`](windows/tw-pearl-miner-windows.zip) |
-| Linux    | [`linux/tw-pearl-miner-linux.tar.gz`](linux/tw-pearl-miner-linux.tar.gz) |
-| HiveOS   | [`hiveos/`](hiveos/) — custom-miner package + setup guide |
+| Platform | Download |
+|----------|----------|
+| Windows  | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/raw/main/windows/tw-pearl-miner-windows.zip) |
+| Linux    | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.tar.gz) |
+| HiveOS   | [custom-miner package](https://github.com/egg5233/tw-pearl-miner/raw/main/hiveos/tw-pearl-miner.tar.gz) + [setup guide](hiveos/) |
+
+Verify with [`SHA256SUMS`](SHA256SUMS): `sha256sum -c SHA256SUMS`.
 
 ## Quick start
 
@@ -23,6 +25,11 @@ is not supported.
 3. Double-click `start.bat`.
 
 ### Linux
+One-line install:
+```bash
+curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
+```
+Or manually:
 ```bash
 tar xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # set WALLET=your prl1... address
