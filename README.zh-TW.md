@@ -1,6 +1,6 @@
 # tw-pearl-miner
 
-[English](README.md) | [简体中文](README.zh-CN.md) | **繁體中文**
+[English](README.en.md) | [简体中文](README.md) | **繁體中文**
 
 為 **Pearl** 礦池（`pearl.tw-pool.com:50001`，已內建）預先編譯的 GPU 挖礦程式。
 提供 Windows + Linux 執行檔，以及 HiveOS 自訂礦工套件。
