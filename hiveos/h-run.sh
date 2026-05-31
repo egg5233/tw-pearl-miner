@@ -5,17 +5,16 @@ MINER_DIR="$(pwd)"
 . h-manifest.conf
 [[ -e $CUSTOM_CONFIG_FILENAME ]] && . "$CUSTOM_CONFIG_FILENAME"
 
-# the kernel .so + cudart ship alongside the binary
-export LD_LIBRARY_PATH="$MINER_DIR:${LD_LIBRARY_PATH:-}"
+# Fallback: if the generated config didn't set WALLET (e.g. config written to a different CWD,
+# or h-config didn't run), derive it straight from the HiveOS flight-sheet template in the env.
+[[ -z $WALLET && -n $CUSTOM_TEMPLATE ]] && WALLET="${CUSTOM_TEMPLATE%%.*}"
 
-# pool override (blank -> built-in pearl.tw-pool.com:50001)
+export LD_LIBRARY_PATH="$MINER_DIR:${LD_LIBRARY_PATH:-}"
 [[ -n $POOL_HOST ]] && export POOL_HOST
 [[ -n $POOL_PORT ]] && export POOL_PORT
 [[ -n $POOL_TLS  ]] && export POOL_TLS
-
 mkdir -p "$(dirname "$CUSTOM_LOG_BASENAME")"
 
-[[ -z $WALLET ]] && { echo "tw-pearl-miner: no wallet set (flight sheet 'Wallet and worker template')"; sleep 10; exit 1; }
+[[ -z $WALLET ]] && { echo "tw-pearl-miner: set your prl1... payout address in the flight sheet 'Wallet and worker template' field"; sleep 10; exit 1; }
 
-# Run; tee to the log file h-stats.sh parses (HiveOS also captures stdout via screen).
 ./pearl-gpu-miner --wallet "$WALLET" --worker "${WORKER:-$(hostname -s)}" 2>&1 | tee "${CUSTOM_LOG_BASENAME}.log"

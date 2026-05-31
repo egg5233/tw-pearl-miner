@@ -10,10 +10,10 @@ NVIDIA GPU (RTX 30/40/50, A100, H100). The pool is built in (`pearl.tw-pool.com:
    - **Miner name:** `tw-pearl-miner`
    - **Installation URL:**
      ```
-     https://github.com/egg5233/tw-pearl-miner/raw/main/hiveos/tw-pearl-miner-1.3.6.tar.gz
+     https://github.com/egg5233/tw-pearl-miner/raw/main/hiveos/tw-pearl-miner-1.3.7.tar.gz
      ```
      (if you publish GitHub Releases, you can instead use
-     `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-1.3.6.tar.gz`)
+     `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-1.3.7.tar.gz`)
    - **Hash algorithm:** `pearl` (free text — informational only)
 3. Fill the flight-sheet fields:
    | Field | Value |
