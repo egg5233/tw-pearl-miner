@@ -26,19 +26,26 @@ A100、H100（原生 SASS 支持 sm_80/86/89/90/120a + PTX 兜底）。不支持
 2. 编辑 `start.bat`，把 `WALLET` 设为你的 `prl1...` 地址 —— 或者直接运行它，按提示粘贴地址。
 3. 双击 `start.bat`。
 
-### Linux
-> 两种格式，内容相同：**`.tar.gz`** → `tar -xzf tw-pearl-miner-linux.tar.gz`，或 **`.zip`** → `unzip tw-pearl-miner-linux.zip`。（`.tar.gz` 不是 zip——`unzip` 只能解 `.zip` 那个。）下面的一行安装脚本会自动帮你处理。
+> ⚠️ **请用命令或上面表格里的链接下载，不要在 github.com 上打开文件再「另存为」**（那样存下来的是 HTML 网页，根本解不开——这是「无法解压」的头号原因）。下面的 `wget`/`curl` 命令才会下到真正的文件。
 
-一行安装：
+一行安装（全自动）：
 ```bash
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 ```
-或手动安装：
+或手动下载 + 解压（两种格式内容相同，二选一）：
 ```bash
-tar xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
+# .tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.tar.gz
+tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
+
+# ……或 .zip
+wget https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.zip
+unzip tw-pearl-miner-linux.zip && cd tw-pearl-miner-linux
+```
+然后设置钱包并运行：
+```bash
 nano start.sh          # 设置 WALLET=你的 prl1... 地址
-chmod +x start.sh
-./start.sh             # 可选：./start.sh <worker名称>
+bash start.sh          # 可选：bash start.sh <worker名称>
 ```
 
 ### HiveOS

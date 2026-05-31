@@ -26,19 +26,26 @@ Verify with [`SHA256SUMS`](SHA256SUMS): `sha256sum -c SHA256SUMS`.
 2. Edit `start.bat` and set your `WALLET` (your `prl1...` address) — or just run it and paste the address when asked.
 3. Double-click `start.bat`.
 
-### Linux
-> Two formats, same files: **`.tar.gz`** → `tar -xzf tw-pearl-miner-linux.tar.gz`, or **`.zip`** → `unzip tw-pearl-miner-linux.zip`. (`.tar.gz` is **not** a zip — `unzip` only works on the `.zip`.) The one-line installer below handles it for you.
+> ⚠️ **Download with a command or the table links above — do NOT open the file on github.com and "Save As"** (that saves the *web page* as HTML, which can't be extracted — the #1 cause of "can't unzip"). The `wget`/`curl` commands below fetch the real file.
 
-One-line install:
+One-line install (does everything):
 ```bash
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 ```
-Or manually:
+Or download + extract manually (two formats, same files — pick one):
 ```bash
-tar xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
+# .tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.tar.gz
+tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
+
+# ...or .zip
+wget https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.zip
+unzip tw-pearl-miner-linux.zip && cd tw-pearl-miner-linux
+```
+Then set your wallet and run:
+```bash
 nano start.sh          # set WALLET=your prl1... address
-chmod +x start.sh
-./start.sh             # optional: ./start.sh <worker-name>
+bash start.sh          # optional: bash start.sh <worker-name>
 ```
 
 ### HiveOS
