@@ -1,13 +1,22 @@
 #!/usr/bin/env bash
 # Report hashrate + GPU stats to HiveOS. Sourced by the agent: it reads $khs and $stats.
-# The miner prints aggregate "<X> TH/s avg" lines; we parse the latest and convert TH/s -> kH/s.
+# The miner prints aggregate "<X> TH/s avg" lines plus an optional per-GPU "[gpu0:.. gpu1:..]"
+# suffix; we parse the latest line and convert TH/s -> kH/s.
 
-. h-manifest.conf 2>/dev/null
+# Resolve OUR OWN directory and source the manifest from there. The agent sources this file by
+# absolute path and does NOT guarantee a particular CWD, so a relative `. h-manifest.conf` can
+# silently fail -> CUSTOM_LOG_BASENAME unset -> LOG=./.log -> khs=0 -> empty dashboard bars.
+# When a file is *sourced*, $0 is the parent shell; BASH_SOURCE[0] is this file.
+HS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" 2>/dev/null && pwd)"
+. "$HS_DIR/h-manifest.conf" 2>/dev/null
+# Hard fallback to the standard install path so stats work no matter what the agent sets.
+[[ -z $CUSTOM_LOG_BASENAME ]] && CUSTOM_LOG_BASENAME=/var/log/miner/tw-pearl-miner/tw-pearl-miner
+[[ -z $CUSTOM_VERSION ]] && CUSTOM_VERSION=0
 LOG="${CUSTOM_LOG_BASENAME}.log"
 
-# latest aggregate hashrate in TH/s (prefer the stable cumulative avg, fall back to window)
-ths=$(grep -oE '[0-9]+(\.[0-9]+)? TH/s avg' "$LOG" 2>/dev/null | tail -1 | grep -oE '[0-9]+(\.[0-9]+)?')
-[[ -z $ths ]] && ths=$(grep -oE '[0-9]+(\.[0-9]+)? TH/s' "$LOG" 2>/dev/null | tail -1 | grep -oE '[0-9]+(\.[0-9]+)?')
+# latest aggregate hashrate in TH/s (prefer the stable cumulative avg, fall back to window/total)
+ths=$(grep -oE '[0-9]+(\.[0-9]+)? TH/s avg' "$LOG" 2>/dev/null | tail -1 | grep -oE '[0-9]+(\.[0-9]+)?' | head -1)
+[[ -z $ths ]] && ths=$(grep -oE '[0-9]+(\.[0-9]+)? TH/s' "$LOG" 2>/dev/null | tail -1 | grep -oE '[0-9]+(\.[0-9]+)?' | head -1)
 [[ -z $ths ]] && ths=0
 
 # TH/s -> kH/s   (1 TH/s = 1e9 kH/s)
@@ -19,7 +28,7 @@ rej=$(grep -oE '[0-9]+ rejected'        "$LOG" 2>/dev/null | tail -1 | grep -oE 
 
 # GPU temps / fans / bus ids from the HiveOS agent (degrade gracefully if absent)
 gpu_json=$(cat /run/hive/gpu-stats.json 2>/dev/null)
-temp='[]'; fan='[]'; bus='[]'; gpu_count=1
+temp='[]'; fan='[]'; bus='[]'; gpu_count=0
 if [[ -n $gpu_json ]] && command -v jq >/dev/null 2>&1; then
   temp=$(echo "$gpu_json" | jq -c '[.temp[]?]' 2>/dev/null);  [[ -z $temp || $temp == null ]] && temp='[]'
   fan=$(echo  "$gpu_json" | jq -c '[.fan[]?]'  2>/dev/null);  [[ -z $fan  || $fan  == null ]] && fan='[]'
@@ -27,9 +36,19 @@ if [[ -n $gpu_json ]] && command -v jq >/dev/null 2>&1; then
   n=$(echo "$temp" | jq 'length' 2>/dev/null); [[ -n $n && $n -gt 0 ]] && gpu_count=$n
 fi
 
-# the miner reports one aggregate number; split it evenly so HiveOS shows per-GPU bars
-hs_each=$(awk -v k="$khs" -v n="$gpu_count" 'BEGIN{ printf "%.0f", (n>0)? k/n : k }')
-hs=$(awk -v e="$hs_each" -v n="$gpu_count" 'BEGIN{ printf "["; for(i=0;i<n;i++){ printf "%s%s", (i?",":""), e } printf "]" }')
+# Per-GPU hashrate: on multi-GPU rigs the miner appends "[gpu0:69 gpu1:68 ...]" (TH/s). Use those
+# real numbers when their count matches the rig's GPU count; otherwise split the aggregate evenly.
+per_vals=$(grep -oE '\[gpu0:[0-9].*\]' "$LOG" 2>/dev/null | tail -1 \
+            | grep -oE 'gpu[0-9]+:[0-9]+(\.[0-9]+)?' | grep -oE '[0-9]+(\.[0-9]+)?$')
+pn=$(printf '%s\n' "$per_vals" | grep -c .)
+if [[ -n $per_vals && ( $gpu_count -eq 0 || $pn -eq $gpu_count ) ]]; then
+  hs=$(printf '%s\n' "$per_vals" | awk 'BEGIN{printf "["} {printf "%s%.0f",(NR>1?",":""),$1*1000000000} END{printf "]"}')
+  [[ $gpu_count -eq 0 ]] && gpu_count=$pn
+else
+  [[ $gpu_count -eq 0 ]] && gpu_count=1
+  hs_each=$(awk -v k="$khs" -v n="$gpu_count" 'BEGIN{ printf "%.0f", (n>0)? k/n : k }')
+  hs=$(awk -v e="$hs_each" -v n="$gpu_count" 'BEGIN{ printf "["; for(i=0;i<n;i++){ printf "%s%s", (i?",":""), e } printf "]" }')
+fi
 
 uptime=$(awk '{print int($1)}' /proc/uptime 2>/dev/null); [[ -z $uptime ]] && uptime=0
 
