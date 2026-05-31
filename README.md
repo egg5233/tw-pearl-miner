@@ -1,5 +1,7 @@
 # tw-pearl-miner
 
+**English** | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md)
+
 Pre-built GPU miner for the **Pearl** pool (`pearl.tw-pool.com:50001`, built in).
 Windows + Linux binaries, plus a HiveOS custom-miner package.
 
@@ -41,6 +43,42 @@ chmod +x start.sh
 Add a Custom Miner with the installation URL from [`hiveos/README.md`](hiveos/README.md) and set your
 wallet in the flight sheet. Full instructions there.
 
+## Expected hashrate
+
+Approximate Pearl hashrate per card, at the shape the miner auto-selects for that GPU (stock clocks):
+
+**GeForce RTX 50 (Blackwell)**
+
+| GPU | Pearl hashrate |
+|-----|----------------|
+| RTX 5090 | ~325 TH/s |
+| RTX 5080 | ~188 TH/s |
+| RTX 5070 Ti | ~157 TH/s |
+| RTX 5070 | ~111 TH/s |
+| RTX 5060 Ti | ~76 TH/s |
+| RTX 5060 | ~63 TH/s |
+
+**GeForce RTX 40 (Ada)**
+
+| GPU | Pearl hashrate |
+|-----|----------------|
+| RTX 4090 | ~190 TH/s |
+| RTX 4080 | ~160 TH/s *(est.)* |
+| RTX 4070 Ti | ~133 TH/s |
+| RTX 4070 | ~102 TH/s |
+| RTX 4060 Ti | ~69 TH/s |
+
+**Datacenter**
+
+| GPU | Pearl hashrate |
+|-----|----------------|
+| H100 SXM | ~650 TH/s |
+| A100 SXM4 (40 GB) | ~142 TH/s |
+
+> Measured on the Pearl pool at **stock clocks**; power-limit / OC tuning can add a few %, and actual
+> results vary by host and cooling. Datacenter figures are for the **SXM** variants — **PCIe** versions
+> run somewhat lower.
+
 ## Usage
 
 ```
@@ -50,7 +88,7 @@ pearl-gpu-miner --wallet <prl1...address> [--worker <name>] [--gpus 0,1]
 - `--worker` (default: machine name): rig name shown on the pool.
 - `--gpus` (default: all): comma-separated device ids, e.g. `0,1,2,3`.
 
-The miner auto-tunes the best matrix shape for your card at startup, shows a periodic hashrate
+The miner automatically picks the best matrix shape for your card, shows a periodic hashrate
 line, mines until you stop it (Ctrl+C), and auto-reconnects through pool restarts / network blips.
 
 ### Requirements
