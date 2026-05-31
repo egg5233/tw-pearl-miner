@@ -27,6 +27,8 @@ Verify with [`SHA256SUMS`](SHA256SUMS): `sha256sum -c SHA256SUMS`.
 3. Double-click `start.bat`.
 
 ### Linux
+> The Linux download is a **`.tar.gz`** (a tarball, **not** a zip) — extract it with **`tar`**, not `unzip`. The one-line installer below does this for you.
+
 One-line install:
 ```bash
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash

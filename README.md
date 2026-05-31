@@ -27,6 +27,8 @@ A100、H100（原生 SASS 支持 sm_80/86/89/90/120a + PTX 兜底）。不支持
 3. 双击 `start.bat`。
 
 ### Linux
+> Linux 下载的是 **`.tar.gz`** 压缩包（不是 zip）—— 请用 **`tar`** 解压，**不要用 `unzip`**。下面的一行安装脚本会自动帮你解压。
+
 一行安装：
 ```bash
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
