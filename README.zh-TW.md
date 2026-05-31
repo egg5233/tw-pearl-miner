@@ -14,7 +14,7 @@ A100、H100（原生 SASS 支援 sm_80/86/89/90/120a + PTX 後備）。不支援
 | 平台 | 下載 |
 |----------|----------|
 | Windows  | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/raw/main/windows/tw-pearl-miner-windows.zip) |
-| Linux    | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.tar.gz) |
+| Linux    | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.zip) |
 | HiveOS   | [自訂礦工套件](https://github.com/egg5233/tw-pearl-miner/raw/main/hiveos/tw-pearl-miner.tar.gz) + [安裝指南](hiveos/) |
 
 用 [`SHA256SUMS`](SHA256SUMS) 驗證：`sha256sum -c SHA256SUMS`。
@@ -27,7 +27,7 @@ A100、H100（原生 SASS 支援 sm_80/86/89/90/120a + PTX 後備）。不支援
 3. 按兩下 `start.bat`。
 
 ### Linux
-> Linux 下載的是 **`.tar.gz`** 壓縮檔（不是 zip）—— 請用 **`tar`** 解壓縮，**不要用 `unzip`**。下面的一行安裝指令會自動幫你解壓縮。
+> 兩種格式，內容相同：**`.tar.gz`** → `tar -xzf tw-pearl-miner-linux.tar.gz`，或 **`.zip`** → `unzip tw-pearl-miner-linux.zip`。（`.tar.gz` 不是 zip——`unzip` 只能解 `.zip` 那個。）下面的一行安裝指令會自動幫你處理。
 
 一行安裝：
 ```bash

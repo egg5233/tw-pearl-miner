@@ -12,6 +12,7 @@ WORKER="${1:-$(hostname -s)}"
 # -----------------------
 
 cd "$(dirname "$0")"
+chmod +x ./pearl-gpu-miner 2>/dev/null || true   # unzip drops the +x bit; restore it
 export LD_LIBRARY_PATH="$(pwd):${LD_LIBRARY_PATH:-}"
 
 if [ "$WALLET" = "YOUR_PRL_WALLET_ADDRESS" ] || [ -z "$WALLET" ]; then

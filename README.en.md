@@ -14,7 +14,7 @@ is not supported.
 | Platform | Download |
 |----------|----------|
 | Windows  | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/raw/main/windows/tw-pearl-miner-windows.zip) |
-| Linux    | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.tar.gz) |
+| Linux    | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.zip) |
 | HiveOS   | [custom-miner package](https://github.com/egg5233/tw-pearl-miner/raw/main/hiveos/tw-pearl-miner.tar.gz) + [setup guide](hiveos/) |
 
 Verify with [`SHA256SUMS`](SHA256SUMS): `sha256sum -c SHA256SUMS`.
@@ -27,7 +27,7 @@ Verify with [`SHA256SUMS`](SHA256SUMS): `sha256sum -c SHA256SUMS`.
 3. Double-click `start.bat`.
 
 ### Linux
-> The Linux download is a **`.tar.gz`** (a tarball, **not** a zip) — extract it with **`tar`**, not `unzip`. The one-line installer below does this for you.
+> Two formats, same files: **`.tar.gz`** → `tar -xzf tw-pearl-miner-linux.tar.gz`, or **`.zip`** → `unzip tw-pearl-miner-linux.zip`. (`.tar.gz` is **not** a zip — `unzip` only works on the `.zip`.) The one-line installer below handles it for you.
 
 One-line install:
 ```bash
