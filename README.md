@@ -18,9 +18,9 @@ A100、H100（原生 SASS 支持 sm_80/86/89/90/120a + PTX 兜底）。不支持
 
 | 平台 | 下载 |
 |----------|----------|
-| Windows  | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/raw/main/windows/tw-pearl-miner-windows.zip) |
-| Linux    | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.zip) |
-| HiveOS   | [自定义矿工包](https://github.com/egg5233/tw-pearl-miner/raw/main/hiveos/tw-pearl-miner-1.3.9.tar.gz) + [安装指南](hiveos/) |
+| Windows  | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9/tw-pearl-miner-windows.zip) |
+| Linux    | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9/tw-pearl-miner-linux.zip) |
+| HiveOS   | [自定义矿工包](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9/tw-pearl-miner-1.3.9.tar.gz) + [安装指南](hiveos/) |
 
 用 [`SHA256SUMS`](SHA256SUMS) 校验：`sha256sum -c SHA256SUMS`。
 
@@ -40,11 +40,11 @@ curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 或手动下载 + 解压（两种格式内容相同，二选一）：
 ```bash
 # .tar.gz
-wget https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 
 # ……或 .zip
-wget https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.zip
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9/tw-pearl-miner-linux.zip
 unzip tw-pearl-miner-linux.zip && cd tw-pearl-miner-linux
 ```
 然后设置钱包并运行：

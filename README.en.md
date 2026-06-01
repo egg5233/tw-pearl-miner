@@ -18,9 +18,9 @@ is not supported.
 
 | Platform | Download |
 |----------|----------|
-| Windows  | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/raw/main/windows/tw-pearl-miner-windows.zip) |
-| Linux    | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.zip) |
-| HiveOS   | [custom-miner package](https://github.com/egg5233/tw-pearl-miner/raw/main/hiveos/tw-pearl-miner-1.3.9.tar.gz) + [setup guide](hiveos/) |
+| Windows  | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9/tw-pearl-miner-windows.zip) |
+| Linux    | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9/tw-pearl-miner-linux.zip) |
+| HiveOS   | [custom-miner package](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9/tw-pearl-miner-1.3.9.tar.gz) + [setup guide](hiveos/) |
 
 Verify with [`SHA256SUMS`](SHA256SUMS): `sha256sum -c SHA256SUMS`.
 
@@ -40,11 +40,11 @@ curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 Or download + extract manually (two formats, same files — pick one):
 ```bash
 # .tar.gz
-wget https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 
 # ...or .zip
-wget https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.zip
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9/tw-pearl-miner-linux.zip
 unzip tw-pearl-miner-linux.zip && cd tw-pearl-miner-linux
 ```
 Then set your wallet and run:

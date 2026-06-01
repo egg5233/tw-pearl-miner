@@ -4,7 +4,7 @@
 # or: ./install.sh [install-dir]   (default: ~/tw-pearl-miner)
 set -euo pipefail
 
-URL="https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.tar.gz"
+URL="https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9/tw-pearl-miner-linux.tar.gz"
 DEST="${1:-$HOME/tw-pearl-miner}"
 
 command -v curl >/dev/null || { echo "need 'curl'"; exit 1; }
