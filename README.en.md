@@ -9,13 +9,18 @@ One fat binary runs on **any Ampere-or-newer NVIDIA GPU** — RTX 30 / 40 / 50 s
 H100 (native SASS for sm_80/86/89/90/120a + a PTX fallback). Pre-Ampere (GTX 10xx / RTX 20xx)
 is not supported.
 
+## What's new in v1.3.9
+- RTX 5090 mining path optimized (**+2–4%** on accepted shares).
+- **H100 / H200 / datacenter cards now mine correctly** — they were previously 100% rejected; H100 now does **~625 TH/s**.
+- HiveOS: **per-GPU hashrate now shows on the dashboard** (was: total only).
+
 ## Downloads
 
 | Platform | Download |
 |----------|----------|
 | Windows  | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/raw/main/windows/tw-pearl-miner-windows.zip) |
 | Linux    | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.zip) |
-| HiveOS   | [custom-miner package](https://github.com/egg5233/tw-pearl-miner/raw/main/hiveos/tw-pearl-miner-1.3.8.tar.gz) + [setup guide](hiveos/) |
+| HiveOS   | [custom-miner package](https://github.com/egg5233/tw-pearl-miner/raw/main/hiveos/tw-pearl-miner-1.3.9.tar.gz) + [setup guide](hiveos/) |
 
 Verify with [`SHA256SUMS`](SHA256SUMS): `sha256sum -c SHA256SUMS`.
 
@@ -81,7 +86,7 @@ Approximate Pearl hashrate per card, at the shape the miner auto-selects for tha
 
 | GPU | Pearl hashrate |
 |-----|----------------|
-| H100 SXM | ~650 TH/s |
+| H100 SXM | ~625 TH/s |
 | A100 SXM4 (40 GB) | ~142 TH/s |
 
 > Measured on the Pearl pool at **stock clocks**; power-limit / OC tuning can add a few %, and actual

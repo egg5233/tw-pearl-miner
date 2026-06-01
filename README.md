@@ -9,13 +9,18 @@
 A100、H100（原生 SASS 支持 sm_80/86/89/90/120a + PTX 兜底）。不支持 Ampere 之前的显卡
 （GTX 10xx / RTX 20xx）。
 
+## v1.3.9 更新内容
+- RTX 5090 挖矿路径优化（有效份额 **+2–4%**）。
+- **H100 / H200 / 数据中心显卡现可正确挖矿** —— 此前 100% 被拒绝；H100 现约 **625 TH/s**。
+- HiveOS：**仪表盘现在显示每张显卡的算力**（此前仅显示总算力）。
+
 ## 下载
 
 | 平台 | 下载 |
 |----------|----------|
 | Windows  | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/raw/main/windows/tw-pearl-miner-windows.zip) |
 | Linux    | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/raw/main/linux/tw-pearl-miner-linux.zip) |
-| HiveOS   | [自定义矿工包](https://github.com/egg5233/tw-pearl-miner/raw/main/hiveos/tw-pearl-miner-1.3.8.tar.gz) + [安装指南](hiveos/) |
+| HiveOS   | [自定义矿工包](https://github.com/egg5233/tw-pearl-miner/raw/main/hiveos/tw-pearl-miner-1.3.9.tar.gz) + [安装指南](hiveos/) |
 
 用 [`SHA256SUMS`](SHA256SUMS) 校验：`sha256sum -c SHA256SUMS`。
 
@@ -81,7 +86,7 @@ bash start.sh          # 可选：bash start.sh <worker名称>
 
 | 显卡 | Pearl 算力 |
 |-----|----------------|
-| H100 SXM | ~650 TH/s |
+| H100 SXM | ~625 TH/s |
 | A100 SXM4（40 GB） | ~142 TH/s |
 
 > 在 Pearl 矿池上以**默认频率**测得；功耗墙 / 超频调优可再提升几个百分点，实际结果因主机与散热而异。
