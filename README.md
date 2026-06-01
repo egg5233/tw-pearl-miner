@@ -27,6 +27,8 @@ A100、H100（原生 SASS 支持 sm_80/86/89/90/120a + PTX 兜底）。不支持
 
 用 [`SHA256SUMS`](SHA256SUMS) 校验：`sha256sum -c SHA256SUMS`。
 
+> **老旧租用机器（驱动 570–580 / CUDA 12.8）？** 如果普通 Linux 版启动即报 `cudaGetDeviceCount returned 0` / `pk_init failed`（驱动太旧、无法运行需要 ≥580.65 的 CUDA 13），请改用 CUDA-12.8 版——速度相同，驱动 ≥570.26 即可运行：[`tw-pearl-miner-1.3.9.1-cuda12.tar.gz`](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9.1/tw-pearl-miner-1.3.9.1-cuda12.tar.gz)。
+
 ## 快速开始
 
 ### Windows

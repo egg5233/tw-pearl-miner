@@ -27,6 +27,8 @@ is not supported.
 
 Verify with [`SHA256SUMS`](SHA256SUMS): `sha256sum -c SHA256SUMS`.
 
+> **Older rental boxes (driver 570–580 / CUDA 12.8)?** If the normal Linux build exits with `cudaGetDeviceCount returned 0` / `pk_init failed` (the driver is too old for CUDA 13, which needs ≥ 580.65), use the CUDA-12.8 build instead — same speed, runs on driver ≥ 570.26: [`tw-pearl-miner-1.3.9.1-cuda12.tar.gz`](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9.1/tw-pearl-miner-1.3.9.1-cuda12.tar.gz).
+
 ## Quick start
 
 ### Windows
