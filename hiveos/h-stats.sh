@@ -26,18 +26,42 @@ khs=$(awk -v t="$ths" 'BEGIN{ printf "%.0f", t*1000000000 }')
 acc=$(grep -oE 'shares: [0-9]+ accepted' "$LOG" 2>/dev/null | tail -1 | grep -oE '[0-9]+' | head -1); [[ -z $acc ]] && acc=0
 rej=$(grep -oE '[0-9]+ rejected'        "$LOG" 2>/dev/null | tail -1 | grep -oE '[0-9]+' | head -1); [[ -z $rej ]] && rej=0
 
-# GPU temps / fans / bus ids from the HiveOS agent (degrade gracefully if absent)
-gpu_json=$(cat /run/hive/gpu-stats.json 2>/dev/null)
+# ---------------------------------------------------------------------------
+# GPU temps / fans / bus ids from the HiveOS agent — NVIDIA CARDS ONLY.
+#
+# Two dashboard-killing gotchas handled here (the "8 empty rectangles" bug):
+#  1. gpu-stats.json includes integrated graphics (Intel/AMD iGPU, brand!="nvidia").
+#     Including it makes our array lengths disagree with the miner's per-GPU count,
+#     and gives HiveOS a bus number that isn't a mining card.
+#  2. HiveOS maps hs[] entries onto card boxes via INTEGER bus numbers ([1,3,9,10...]),
+#     but gpu-stats.json busids are strings like "01:00.0" (PCI hex). We must take the
+#     bus part and convert hex -> decimal ("0a" -> 10), or the mapping silently fails
+#     and every per-card box shows empty.
+# ---------------------------------------------------------------------------
+GPU_STATS_JSON=${GPU_STATS_JSON:-/run/hive/gpu-stats.json}
+gpu_json=$(cat "$GPU_STATS_JSON" 2>/dev/null)
 temp='[]'; fan='[]'; bus='[]'; gpu_count=0
 if [[ -n $gpu_json ]] && command -v jq >/dev/null 2>&1; then
-  temp=$(echo "$gpu_json" | jq -c '[.temp[]?]' 2>/dev/null);  [[ -z $temp || $temp == null ]] && temp='[]'
-  fan=$(echo  "$gpu_json" | jq -c '[.fan[]?]'  2>/dev/null);  [[ -z $fan  || $fan  == null ]] && fan='[]'
-  bus=$(echo  "$gpu_json" | jq -c '[.busids[]?]' 2>/dev/null); [[ -z $bus  || $bus  == null ]] && bus='[]'
-  n=$(echo "$temp" | jq 'length' 2>/dev/null); [[ -n $n && $n -gt 0 ]] && gpu_count=$n
+  # Indices of NVIDIA entries. Older agents may lack the brand array -> fall back to all entries.
+  nv_idx=$(echo "$gpu_json" | jq -r '(.brand // []) | to_entries[] | select(.value=="nvidia") | .key' 2>/dev/null)
+  [[ -z $nv_idx ]] && nv_idx=$(echo "$gpu_json" | jq -r '(.busids // []) | to_entries[] | .key' 2>/dev/null)
+  t_arr=''; f_arr=''; b_arr=''; sep=''
+  for i in $nv_idx; do
+    t=$(echo "$gpu_json" | jq -r ".temp[$i] // 0" 2>/dev/null);   [[ $t =~ ^[0-9]+(\.[0-9]+)?$ ]] || t=0
+    f=$(echo "$gpu_json" | jq -r ".fan[$i] // 0" 2>/dev/null);    [[ $f =~ ^[0-9]+(\.[0-9]+)?$ ]] || f=0
+    bhex=$(echo "$gpu_json" | jq -r ".busids[$i] // \"00\"" 2>/dev/null | cut -d: -f1)
+    [[ $bhex =~ ^[0-9a-fA-F]+$ ]] || bhex=00
+    b=$((16#$bhex))   # PCI bus is hex: "0a:00.0" -> 10
+    t_arr+="$sep$t"; f_arr+="$sep$f"; b_arr+="$sep$b"; sep=','
+    gpu_count=$((gpu_count+1))
+  done
+  if [[ $gpu_count -gt 0 ]]; then
+    temp="[$t_arr]"; fan="[$f_arr]"; bus="[$b_arr]"
+  fi
 fi
 
 # Per-GPU hashrate: on multi-GPU rigs the miner appends "[gpu0:69 gpu1:68 ...]" (TH/s). Use those
-# real numbers when their count matches the rig's GPU count; otherwise split the aggregate evenly.
+# real numbers when their count matches the rig's NVIDIA count; otherwise split the aggregate evenly.
 per_vals=$(grep -oE '\[gpu0:[0-9].*\]' "$LOG" 2>/dev/null | tail -1 \
             | grep -oE 'gpu[0-9]+:[0-9]+(\.[0-9]+)?' | grep -oE '[0-9]+(\.[0-9]+)?$')
 pn=$(printf '%s\n' "$per_vals" | grep -c .)
