@@ -9,6 +9,10 @@ One fat binary runs on **any Ampere-or-newer NVIDIA GPU** — RTX 30 / 40 / 50 s
 H100 (native SASS for sm_80/86/89/90/120a + a PTX fallback). Pre-Ampere (GTX 10xx / RTX 20xx)
 is not supported.
 
+## What's new in v1.4.0
+- **Version on startup.** The miner now prints `tw-pearl-miner v1.4.0` when it launches, so you always know which version you're running.
+- **More reliable share submission.**
+
 ## What's new in v1.3.9.1
 - **Fixes an 8-card / many-GPU rig hang** (CPU busy-spin on GPU sync caused a load spike). **Multi-GPU rig users: update to v1.3.9.1.** Single / desktop GPU users are unaffected (update optional). *(Windows binary is unchanged from v1.3.9 — the hang only affects multi-GPU Linux/HiveOS rigs.)*
 
@@ -21,13 +25,13 @@ is not supported.
 
 | Platform | Download |
 |----------|----------|
-| Windows  | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9.1/tw-pearl-miner-windows.zip) |
-| Linux    | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9.1/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9.1/tw-pearl-miner-linux.zip) |
-| HiveOS   | [custom-miner package](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9.1/tw-pearl-miner-1.3.9.1.tar.gz) + [setup guide](hiveos/) |
+| Windows  | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.0/tw-pearl-miner-windows.zip) |
+| Linux    | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.0/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.0/tw-pearl-miner-linux.zip) |
+| HiveOS   | [custom-miner package](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.0/tw-pearl-miner-1.4.0.tar.gz) + [setup guide](hiveos/) |
 
 Verify with [`SHA256SUMS`](SHA256SUMS): `sha256sum -c SHA256SUMS`.
 
-> **Older rental boxes (driver 570–580 / CUDA 12.8)?** If the normal Linux build exits with `cudaGetDeviceCount returned 0` / `pk_init failed` (the driver is too old for CUDA 13, which needs ≥ 580.65), use the CUDA-12.8 build instead — same speed, runs on driver ≥ 570.26: [`tw-pearl-miner-1.3.9.1-cuda12.tar.gz`](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9.1/tw-pearl-miner-1.3.9.1-cuda12.tar.gz).
+> **Older rental boxes (driver 570–580 / CUDA 12.8)?** If the normal Linux build exits with `cudaGetDeviceCount returned 0` / `pk_init failed` (the driver is too old for CUDA 13, which needs ≥ 580.65), use the CUDA-12.8 build instead — same speed, runs on driver ≥ 570.26: [`tw-pearl-miner-1.4.0-cuda12.tar.gz`](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.0/tw-pearl-miner-1.4.0-cuda12.tar.gz).
 
 ## Quick start
 
@@ -45,11 +49,11 @@ curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 Or download + extract manually (two formats, same files — pick one):
 ```bash
 # .tar.gz
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9.1/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.0/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 
 # ...or .zip
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.3.9.1/tw-pearl-miner-linux.zip
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.0/tw-pearl-miner-linux.zip
 unzip tw-pearl-miner-linux.zip && cd tw-pearl-miner-linux
 ```
 Then set your wallet and run:
