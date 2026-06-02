@@ -31,7 +31,7 @@ A100、H100（原生 SASS 支援 sm_80/86/89/90/120a + PTX 後備）。不支援
 
 用 [`SHA256SUMS`](SHA256SUMS) 驗證：`sha256sum -c SHA256SUMS`。
 
-> **老舊租用機器（驅動 570–580 / CUDA 12.8）？** 如果一般 Linux 版啟動即報 `cudaGetDeviceCount returned 0` / `pk_init failed`（驅動太舊、無法執行需要 ≥580.65 的 CUDA 13），請改用 CUDA-12.8 版——速度相同，驅動 ≥570.26 即可執行：[`tw-pearl-miner-1.4.0-cuda12.tar.gz`](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.0/tw-pearl-miner-1.4.0-cuda12.tar.gz)。
+> **老舊租用機器（驅動 570–580 / CUDA 12.8）？** 如果一般 Linux 版啟動即報 `cudaGetDeviceCount returned 0` / `pk_init failed`（驅動太舊、無法執行需要 ≥580.65 的 CUDA 13），請改用 CUDA-12.8 版——速度相同，驅動 ≥570.26 即可執行：[`tw-pearl-miner-1.4.0-cuda12.tar.gz`](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.0/tw-pearl-miner-1.4.0-cuda12.tar.gz)。**HiveOS 礦機請改用 CUDA-12.8 自訂礦工套件：**[`tw-pearl-miner-1.4.0.c12.tar.gz`](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.0/tw-pearl-miner-1.4.0.c12.tar.gz)。
 
 ## 快速開始
 

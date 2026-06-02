@@ -47,6 +47,11 @@ tw-pearl-miner/
   UI (worker → ⋮ → *Upgrade* / NVIDIA driver) or Hive Shell `nvidia-driver-update`. If the miner log
   shows `cudaGetDeviceCount returned 0` / `pk_init failed`, the driver is **too old** — `nvidia-smi`
   must report "CUDA Version: 13.0" or higher.
+- **Stuck on driver 570–580 (can't reach CUDA 13)?** Use the **CUDA-12.8** custom-miner package as
+  your Installation URL instead — same speed, runs on driver ≥ 570.26 (ships `libcudart.so.12`):
+  ```
+  https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.0/tw-pearl-miner-1.4.0.c12.tar.gz
+  ```
 - **TLS:** the pool connection is encrypted with TLS.
 - **Hashrate units:** the miner's metric is in TH/s; HiveOS displays it scaled (the `total khs`
   field is `TH/s × 1e9`).
