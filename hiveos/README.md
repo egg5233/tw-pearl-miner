@@ -10,15 +10,15 @@ NVIDIA GPU (RTX 30/40/50, A100, H100). The pool is built in (`pearl.tw-pool.com:
    - **Miner name:** `tw-pearl-miner`
    - **Installation URL:**
      ```
-     https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-1.4.2.tar.gz
+     https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.3/tw-pearl-miner-1.4.3.tar.gz
      ```
      (if you publish GitHub Releases, you can instead use
-     `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-1.4.2.tar.gz`)
+     `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-1.4.3.tar.gz`)
    - **Hash algorithm:** `pearl` (free text — informational only)
 3. Fill the flight-sheet fields:
    | Field | Value |
    |-------|-------|
-   | **Wallet and worker template** | your `prl1...` payout address |
+   | **Wallet and worker template** | your `prl1...` payout address — **or** your pool username (set your wallet on the pool website first; the pool resolves it) |
    | **Pool URL** | *leave blank* (built-in pool) — or `host:port` to override |
    | **Pass** | `x` |
    | **Extra config arguments** | *(optional)* extra env lines, one per line — e.g. `CN2=1` (see *Restricted network?* below) |
@@ -50,7 +50,7 @@ tw-pearl-miner/
 - **Stuck on driver 570–580 (can't reach CUDA 13)?** Use the **CUDA-12.8** custom-miner package as
   your Installation URL instead — same speed, runs on driver ≥ 570.26 (ships `libcudart.so.12`):
   ```
-  https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-1.4.2.c12.tar.gz
+  https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.3/tw-pearl-miner-1.4.3.c12.tar.gz
   ```
 - **Restricted network?** If the normal pool address is unreachable from your network, set
   **Extra config arguments = `CN2=1`** to use an alternate, obfuscated connection path. Use the
