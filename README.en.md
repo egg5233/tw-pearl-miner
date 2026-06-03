@@ -4,7 +4,7 @@
 
 Pre-built GPU miner for the **Pearl** pool (`pearl.tw-pool.com:50001`, built in) — one binary for any **Ampere-or-newer NVIDIA GPU** (RTX 30 / 40 / 50, A100, H100) on **Windows · Linux · HiveOS**. Pre-Ampere (GTX 10xx / RTX 20xx) is not supported.
 
-> **Latest (v1.4.3):** username mining — set your wallet on the pool website, then mine with a short name: `pearl-gpu-miner -u <username>` (your `--wallet <prl1…>` still works). Also: the Linux binary is now self-contained. [Full changelog ↗](https://github.com/egg5233/tw-pearl-miner/releases)
+> **Latest (v1.4.4):** username mining now accepts a worker name — `pearl-gpu-miner -u <username>.<worker>` (e.g. `-u egg5233.my_rig`), the same `name.worker` form `--wallet` already supports (v1.4.3 rejected it as "invalid username"). Plain `-u <username>` and `--wallet <prl1…>` are unchanged. [Full changelog ↗](https://github.com/egg5233/tw-pearl-miner/releases)
 
 ## Download
 
@@ -15,11 +15,11 @@ Pre-built GPU miner for the **Pearl** pool (`pearl.tw-pool.com:50001`, built in)
 
 | Your setup | NVIDIA driver | Download |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.3/tw-pearl-miner-windows.zip) |
-| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.3/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.3/tw-pearl-miner-linux.zip) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-1.4.3.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.3/tw-pearl-miner-1.4.3.tar.gz) |
-| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-1.4.3-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.3/tw-pearl-miner-1.4.3-cuda12.tar.gz) |
-| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-1.4.3.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.3/tw-pearl-miner-1.4.3.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.4/tw-pearl-miner-windows.zip) |
+| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.4/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.4/tw-pearl-miner-linux.zip) |
+| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-1.4.4.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.4/tw-pearl-miner-1.4.4.tar.gz) |
+| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-1.4.4-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.4/tw-pearl-miner-1.4.4-cuda12.tar.gz) |
+| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-1.4.4.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.4/tw-pearl-miner-1.4.4.c12.tar.gz) |
 
 > `.tar.gz` / `.zip` (Linux) = the **same build**, different archive format. The `cuda12` / `.c12` builds are **identical in speed and features** — only the bundled CUDA runtime differs, so they start on older (≥ 570.26) drivers. Use them only if the normal build exits with `cudaGetDeviceCount returned 0` / `pk_init failed`. Verify any download with [`SHA256SUMS`](SHA256SUMS): `sha256sum -c SHA256SUMS`.
 
@@ -38,7 +38,7 @@ Pre-built GPU miner for the **Pearl** pool (`pearl.tw-pool.com:50001`, built in)
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 
 # ...or manually (.tar.gz or .zip — same files):
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.3/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.4/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # set WALLET=your prl1... address
 bash start.sh          # optional: bash start.sh <worker-name>
@@ -71,10 +71,10 @@ Datacenter figures are for the **SXM** variants — **PCIe** versions run somewh
 **Command line**
 ```
 pearl-gpu-miner --wallet <prl1...address> [--worker <name>] [--gpus 0,1]
-pearl-gpu-miner -u <username>             [--worker <name>] [--gpus 0,1]
+pearl-gpu-miner -u <username>[.<worker>]  [--gpus 0,1]
 ```
 - `--wallet` (required): your payout address.
-- `-u <username>`: mine with your pool username instead of `--wallet` (set your payout address on the pool website first; the pool resolves the username to your address). Use exactly one of `--wallet` or `-u`.
+- `-u <username>`: mine with your pool username instead of `--wallet` (set your payout address on the pool website first; the pool resolves the username to your address). Use exactly one of `--wallet` or `-u`. You can append a worker name as `-u <username>.<worker>` (e.g. `-u egg5233.my_rig`) — equivalent to `-u <username> --worker <worker>`.
 - `--worker` (default: machine name): rig name shown on the pool.
 - `--gpus` (default: all): comma-separated device ids, e.g. `0,1,2,3`.
 
