@@ -85,7 +85,7 @@ Approximate Pearl hashrate per card, at the shape the miner auto-selects for tha
 
 | GPU | Pearl hashrate |
 |-----|----------------|
-| RTX 4090 | ~190 TH/s |
+| RTX 4090 | ~250 TH/s |
 | RTX 4080 | ~160 TH/s *(est.)* |
 | RTX 4070 Ti | ~133 TH/s |
 | RTX 4070 | ~102 TH/s |
