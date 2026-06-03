@@ -10,10 +10,10 @@ NVIDIA GPU (RTX 30/40/50, A100, H100). The pool is built in (`pearl.tw-pool.com:
    - **Miner name:** `tw-pearl-miner`
    - **Installation URL:**
      ```
-     https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-1.4.1.tar.gz
+     https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-1.4.2.tar.gz
      ```
      (if you publish GitHub Releases, you can instead use
-     `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-1.4.1.tar.gz`)
+     `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-1.4.2.tar.gz`)
    - **Hash algorithm:** `pearl` (free text — informational only)
 3. Fill the flight-sheet fields:
    | Field | Value |
@@ -21,7 +21,7 @@ NVIDIA GPU (RTX 30/40/50, A100, H100). The pool is built in (`pearl.tw-pool.com:
    | **Wallet and worker template** | your `prl1...` payout address |
    | **Pool URL** | *leave blank* (built-in pool) — or `host:port` to override |
    | **Pass** | `x` |
-   | **Extra config arguments** | *(optional)* extra env lines, one per line |
+   | **Extra config arguments** | *(optional)* extra env lines, one per line — e.g. `CN2=1` (see *Restricted network?* below) |
 4. Apply the flight sheet to the rig. HiveOS downloads the package, installs it to
    `/hive/miners/custom/tw-pearl-miner/`, and starts mining.
 
@@ -50,8 +50,12 @@ tw-pearl-miner/
 - **Stuck on driver 570–580 (can't reach CUDA 13)?** Use the **CUDA-12.8** custom-miner package as
   your Installation URL instead — same speed, runs on driver ≥ 570.26 (ships `libcudart.so.12`):
   ```
-  https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-1.4.1.c12.tar.gz
+  https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-1.4.2.c12.tar.gz
   ```
-- **TLS:** the pool connection is encrypted with TLS.
+- **Restricted network?** If the normal pool address is unreachable from your network, set
+  **Extra config arguments = `CN2=1`** to use an alternate, obfuscated connection path. Use the
+  `key=value` form `CN2=1` (a bare `--cn2` line does **not** work on HiveOS — it would be read as a
+  shell command). The miner's startup log shows which connection mode it's using.
+- **TLS:** the default pool connection is encrypted with TLS.
 - **Hashrate units:** the miner's metric is in TH/s; HiveOS displays it scaled (the `total khs`
   field is `TH/s × 1e9`).

@@ -4,7 +4,7 @@
 
 為 **Pearl** 礦池（`pearl.tw-pool.com:50001`，已內建）預先編譯的 GPU 挖礦程式 —— 單一二進位可執行於**任何 Ampere 或更新的 NVIDIA 顯示卡**（RTX 30 / 40 / 50、A100、H100），支援 **Windows · Linux · HiveOS**。不支援 Ampere 之前的顯示卡（GTX 10xx / RTX 20xx）。
 
-> **最新（v1.4.1）：** 連線卡死自動復原 —— 如果礦池/儀表板算力掉到接近 0 而礦機仍在全速雜湊，挖礦程式現在會在約 15 秒內偵測到卡死的連線並自動重連。[完整更新日誌 ↗](https://github.com/egg5233/tw-pearl-miner/releases)
+> **最新（v1.4.2）：** HiveOS —— 在受限網路下，透過設定 **「Extra config arguments」`CN2=1`** 啟用備用的混淆連線路徑。*（v1.4.1：連線卡死自動復原 —— 約 15 秒內偵測到卡死並自動重連。）* [完整更新日誌 ↗](https://github.com/egg5233/tw-pearl-miner/releases)
 
 ## 下載
 
@@ -15,11 +15,11 @@
 
 | 你的系統 | NVIDIA 驅動 | 下載 |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-windows.zip) |
-| **Linux**（桌面 / 伺服器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-linux.zip) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-1.4.1.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-1.4.1.tar.gz) |
-| **Linux** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-1.4.1-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-1.4.1-cuda12.tar.gz) |
-| **HiveOS** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-1.4.1.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-1.4.1.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-windows.zip) |
+| **Linux**（桌面 / 伺服器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-linux.zip) |
+| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-1.4.2.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-1.4.2.tar.gz) |
+| **Linux** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-1.4.2-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-1.4.2-cuda12.tar.gz) |
+| **HiveOS** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-1.4.2.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-1.4.2.c12.tar.gz) |
 
 > **`.tar.gz` 與 `.zip`**（Linux）是**同一個版本**，只是壓縮格式不同。**CUDA 12 版本**（`-cuda12`、`.c12`）**速度與功能完全一致** —— 只是內建的 CUDA 執行庫不同，所以能在**較舊的驅動（≥ 570.26）**上啟動；僅當一般版本啟動時出現 `cudaGetDeviceCount returned 0` / `pk_init failed` 時才用。可用 [`SHA256SUMS`](SHA256SUMS) 校驗：`sha256sum -c SHA256SUMS`。
 
@@ -38,7 +38,7 @@
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 
 # ……或手動（.tar.gz 或 .zip，內容相同）：
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # 設定 WALLET=你的 prl1... 位址
 bash start.sh          # 選用：bash start.sh <worker名稱>

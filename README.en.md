@@ -4,7 +4,7 @@
 
 Pre-built GPU miner for the **Pearl** pool (`pearl.tw-pool.com:50001`, built in) — one binary for any **Ampere-or-newer NVIDIA GPU** (RTX 30 / 40 / 50, A100, H100) on **Windows · Linux · HiveOS**. Pre-Ampere (GTX 10xx / RTX 20xx) is not supported.
 
-> **Latest (v1.4.1):** auto-recovery on stalled connections — if the pool/dashboard hashrate drops toward 0 while your rig keeps hashing, the miner now detects the stall within ~15 s and reconnects. [Full changelog ↗](https://github.com/egg5233/tw-pearl-miner/releases)
+> **Latest (v1.4.2):** HiveOS — enable the alternate, obfuscated connection path for restricted networks by setting **Extra config arguments `CN2=1`**. *(v1.4.1: auto-recovery on stalled connections — detects a stall within ~15 s and reconnects.)* [Full changelog ↗](https://github.com/egg5233/tw-pearl-miner/releases)
 
 ## Download
 
@@ -15,11 +15,11 @@ Pre-built GPU miner for the **Pearl** pool (`pearl.tw-pool.com:50001`, built in)
 
 | Your setup | NVIDIA driver | Download |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-windows.zip) |
-| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-linux.zip) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-1.4.1.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-1.4.1.tar.gz) |
-| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-1.4.1-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-1.4.1-cuda12.tar.gz) |
-| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-1.4.1.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-1.4.1.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-windows.zip) |
+| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-linux.zip) |
+| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-1.4.2.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-1.4.2.tar.gz) |
+| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-1.4.2-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-1.4.2-cuda12.tar.gz) |
+| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-1.4.2.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-1.4.2.c12.tar.gz) |
 
 > `.tar.gz` / `.zip` (Linux) = the **same build**, different archive format. The `cuda12` / `.c12` builds are **identical in speed and features** — only the bundled CUDA runtime differs, so they start on older (≥ 570.26) drivers. Use them only if the normal build exits with `cudaGetDeviceCount returned 0` / `pk_init failed`. Verify any download with [`SHA256SUMS`](SHA256SUMS): `sha256sum -c SHA256SUMS`.
 
@@ -38,7 +38,7 @@ Pre-built GPU miner for the **Pearl** pool (`pearl.tw-pool.com:50001`, built in)
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 
 # ...or manually (.tar.gz or .zip — same files):
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.1/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.4.2/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # set WALLET=your prl1... address
 bash start.sh          # optional: bash start.sh <worker-name>
