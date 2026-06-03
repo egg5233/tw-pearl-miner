@@ -85,7 +85,7 @@ bash start.sh          # 選用：bash start.sh <worker名稱>
 
 | 顯示卡 | Pearl 算力 |
 |-----|----------------|
-| RTX 4090 | ~190 TH/s |
+| RTX 4090 | ~250 TH/s |
 | RTX 4080 | ~160 TH/s *(估算)* |
 | RTX 4070 Ti | ~133 TH/s |
 | RTX 4070 | ~102 TH/s |
