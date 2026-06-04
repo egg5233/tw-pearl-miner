@@ -4,11 +4,9 @@
 
 为 **Pearl** 矿池（`pearl.tw-pool.com:50001`，已内置）预编译的 GPU 矿工程序 —— 单个二进制可运行在**任何 Ampere 及更新的 NVIDIA 显卡**（RTX 30 / 40 / 50、A100、H100）上，支持 **Windows · Linux · HiveOS**。不支持 Ampere 之前的显卡（GTX 10xx / RTX 20xx）。
 
-> **最新（v1.6.0）：** 更平滑的面板算力 —— 矿工现在会向矿池上报算力，让面板上的算力读数更稳定。仅用于显示（不影响挖矿、份额或收益）；可用 `POOL_HASHRATE_REPORT_SECS` 调整或关闭。[完整更新日志 ↗](https://github.com/egg5233/tw-pearl-miner/releases)
 
 ## 下载
 
-**两个问题：**
 
 1. **你用的是什么系统？** —— Windows、Linux（桌面/服务器）或 HiveOS 矿机。
 2. **你的 NVIDIA 驱动有多新？** —— 运行 `nvidia-smi` 查看：**≥ 580.65** → 普通 **CUDA 13** 版本 · **570.26–580** → **CUDA 12** 版本（`-cuda12` / `.c12`） · **< 570.26** → 请先更新驱动。
