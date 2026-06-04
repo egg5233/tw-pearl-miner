@@ -2,10 +2,6 @@
 
 [English](README.en.md) | **简体中文** | [繁體中文](README.zh-TW.md)　·　[最新版本 ↗](https://github.com/egg5233/tw-pearl-miner/releases/latest)
 
-为 **Pearl** 矿池（`pearl.tw-pool.com:50001`，已内置）预编译的 GPU 矿工程序 —— 单个二进制可运行在**任何 Ampere 及更新的 NVIDIA 显卡**（RTX 30 / 40 / 50、A100、H100）上，支持 **Windows · Linux · HiveOS**。不支持 Ampere 之前的显卡（GTX 10xx / RTX 20xx）。
-
-
-## 下载
 
 | 系统 | NVIDIA 驱动 | 下载 |
 |---|---|---|
