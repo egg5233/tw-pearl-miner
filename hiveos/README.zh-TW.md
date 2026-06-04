@@ -27,6 +27,10 @@ NVIDIA 顯示卡（RTX 30/40/50、A100、H100）。礦池已內建（`pearl.tw-p
 4. 把飛行表套用到礦機。HiveOS 會下載安裝包，安裝到
    `/hive/miners/custom/tw-pearl-miner/`，然後開始挖礦。
 
+![HiveOS 設定參考](hive_setting.png)
+
+*HiveOS 設定參考 —— Custom configuration 範例：礦工名稱、安裝 URL（經 ghfast.top 代理加速）、錢包模板、礦池位址 `pearl.tw-pool.com:50001`、Pass=`x`、Extra config arguments=`CN2=1`。*
+
 礦機名稱會自動取自 rig；算力（TH/s）與接受/拒絕份額會顯示在 HiveOS 儀表板上。
 
 ## 安裝包內容
