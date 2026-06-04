@@ -15,11 +15,11 @@ Pre-built GPU miner for the **Pearl** pool (`pearl.tw-pool.com:50001`, built in)
 
 | Your setup | NVIDIA driver | Download |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.6.0/tw-pearl-miner-windows.zip) |
-| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.6.0/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.6.0/tw-pearl-miner-linux.zip) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-1.6.0.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.6.0/tw-pearl-miner-1.6.0.tar.gz) |
-| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-1.6.0-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.6.0/tw-pearl-miner-1.6.0-cuda12.tar.gz) |
-| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-1.6.0.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.6.0/tw-pearl-miner-1.6.0.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-windows.zip) |
+| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-linux.zip) |
+| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-1.7.0.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-1.7.0.tar.gz) |
+| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-1.7.0-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-1.7.0-cuda12.tar.gz) |
+| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-1.7.0.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-1.7.0.c12.tar.gz) |
 
 > `.tar.gz` / `.zip` (Linux) = the **same build**, different archive format. The `cuda12` / `.c12` builds are **identical in speed and features** — only the bundled CUDA runtime differs, so they start on older (≥ 570.26) drivers. Use them only if the normal build exits with `cudaGetDeviceCount returned 0` / `pk_init failed`. Verify any download with [`SHA256SUMS`](SHA256SUMS): `sha256sum -c SHA256SUMS`.
 
@@ -38,7 +38,7 @@ Pre-built GPU miner for the **Pearl** pool (`pearl.tw-pool.com:50001`, built in)
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 
 # ...or manually (.tar.gz or .zip — same files):
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.6.0/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # set WALLET=your prl1... address
 bash start.sh          # optional: bash start.sh <worker-name>
