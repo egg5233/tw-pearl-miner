@@ -7,11 +7,7 @@
 
 ## 下载
 
-
-1. **你用的是什么系统？** —— Windows、Linux（桌面/服务器）或 HiveOS 矿机。
-2. **你的 NVIDIA 驱动有多新？** —— 运行 `nvidia-smi` 查看：**≥ 580.65** → 普通 **CUDA 13** 版本 · **570.26–580** → **CUDA 12** 版本（`-cuda12` / `.c12`） · **< 570.26** → 请先更新驱动。
-
-| 你的系统 | NVIDIA 驱动 | 下载 |
+| 系统 | NVIDIA 驱动 | 下载 |
 |---|---|---|
 | **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-windows.zip) |
 | **Linux**（桌面 / 服务器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-linux.zip) |
