@@ -11,17 +11,12 @@
 | **Linux** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-1.7.0-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-1.7.0-cuda12.tar.gz) |
 | **HiveOS** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-1.7.0.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-1.7.0.c12.tar.gz) |
 
-> **`.tar.gz` 与 `.zip`**（Linux）是**同一个版本**，只是压缩格式不同。**CUDA 12 版本**（`-cuda12`、`.c12`）**速度与功能完全一致** —— 只是内置的 CUDA 运行库不同，所以能在**较旧的驱动（≥ 570.26）**上启动；仅当普通版本启动时报 `cudaGetDeviceCount returned 0` / `pk_init failed` 时才用。可用 [`SHA256SUMS`](SHA256SUMS) 校验：`sha256sum -c SHA256SUMS`。
-
 ## 快速开始
 
 ### Windows
 1. 下载并解压 `tw-pearl-miner-windows.zip`。
 2. 编辑 `start.bat`，把 `WALLET` 设为你的 `prl1...` 地址 —— 或者直接运行它，按提示粘贴地址。
 3. 双击 `start.bat`。
-
-### Linux
-> ⚠️ 请用表格里的链接或下面的 `wget`/`curl` 下载，**不要**在 github.com 上打开文件再「另存为」（那样存下来的是 HTML 网页，根本解不开——这是「无法解压」的头号原因）。
 
 ```bash
 # 一行安装 —— 自动下载、解压、提示填钱包并运行
