@@ -2,18 +2,8 @@
 
 [English](README.en.md) | [简体中文](README.md) | **繁體中文**　·　[最新版本 ↗](https://github.com/egg5233/tw-pearl-miner/releases/latest)
 
-為 **Pearl** 礦池（`pearl.tw-pool.com:50001`，已內建）預先編譯的 GPU 挖礦程式 —— 單一二進位可執行於**任何 Ampere 或更新的 NVIDIA 顯示卡**（RTX 30 / 40 / 50、A100、H100），支援 **Windows · Linux · HiveOS**。不支援 Ampere 之前的顯示卡（GTX 10xx / RTX 20xx）。
 
-> **最新（v1.6.0）：** 更平滑的儀表板算力 —— 礦工現在會向礦池回報算力，讓儀表板上的算力讀數更穩定。僅用於顯示（不影響挖礦、份額或收益）；可用 `POOL_HASHRATE_REPORT_SECS` 調整或關閉。[完整更新日誌 ↗](https://github.com/egg5233/tw-pearl-miner/releases)
-
-## 下載
-
-**兩個問題：**
-
-1. **你用的是什麼系統？** —— Windows、Linux（桌面/伺服器）或 HiveOS 礦機。
-2. **你的 NVIDIA 驅動有多新？** —— 執行 `nvidia-smi` 查看：**≥ 580.65** → 一般 **CUDA 13** 版本 · **570.26–580** → **CUDA 12** 版本（`-cuda12` / `.c12`） · **< 570.26** → 請先更新驅動。
-
-| 你的系統 | NVIDIA 驅動 | 下載 |
+| 系統 | NVIDIA 驅動 | 下載 |
 |---|---|---|
 | **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-windows.zip) |
 | **Linux**（桌面 / 伺服器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-linux.zip) |
@@ -21,17 +11,12 @@
 | **Linux** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-1.7.0-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-1.7.0-cuda12.tar.gz) |
 | **HiveOS** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-1.7.0.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-1.7.0.c12.tar.gz) |
 
-> **`.tar.gz` 與 `.zip`**（Linux）是**同一個版本**，只是壓縮格式不同。**CUDA 12 版本**（`-cuda12`、`.c12`）**速度與功能完全一致** —— 只是內建的 CUDA 執行庫不同，所以能在**較舊的驅動（≥ 570.26）**上啟動；僅當一般版本啟動時出現 `cudaGetDeviceCount returned 0` / `pk_init failed` 時才用。可用 [`SHA256SUMS`](SHA256SUMS) 校驗：`sha256sum -c SHA256SUMS`。
-
 ## 快速開始
 
 ### Windows
 1. 下載並解壓縮 `tw-pearl-miner-windows.zip`。
 2. 編輯 `start.bat`，把 `WALLET` 設成你的 `prl1...` 位址 —— 或直接執行它，依提示貼上位址。
 3. 按兩下 `start.bat`。
-
-### Linux
-> ⚠️ 請用表格裡的連結或下面的 `wget`/`curl` 下載，**不要**在 github.com 上打開檔案再「另存新檔」（那樣存下來的是 HTML 網頁，根本解不開——這是「無法解壓縮」的頭號原因）。
 
 ```bash
 # 一行安裝 —— 自動下載、解壓縮、提示填錢包並執行
@@ -45,7 +30,7 @@ bash start.sh          # 選用：bash start.sh <worker名稱>
 ```
 
 ### HiveOS
-在 HiveOS 中「新增自訂礦工」（Add Custom Miner），使用 [`hiveos/README.md`](hiveos/README.md) 裡的安裝 URL，並在 flight sheet 中填入你的錢包位址。完整說明見該文件。
+在 HiveOS 中「新增自訂礦工」（Add Custom Miner），使用 [`hiveos/README.zh-TW.md`](hiveos/README.zh-TW.md) 裡的安裝 URL，並在 flight sheet 中填入你的錢包位址。完整說明見該文件。
 
 <details>
 <summary><b>預期算力</b> —— RTX 30 / 40 / 50、A100、H100</summary>

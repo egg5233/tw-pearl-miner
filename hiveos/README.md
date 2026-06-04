@@ -1,61 +1,64 @@
-# tw-pearl-miner on HiveOS
+# tw-pearl-miner 在 HiveOS 上
 
-A HiveOS **Custom Miner** package for the Pearl GPU miner. Works on any Ampere-or-newer
-NVIDIA GPU (RTX 30/40/50, A100, H100). The pool is built in (`pearl.tw-pool.com:50001`).
+[English](README.en.md) | **简体中文** | [繁體中文](README.zh-TW.md)
 
-## Install
+Pearl GPU 矿工的 HiveOS **自定义矿工（Custom Miner）** 安装包。支持任何 Ampere 及更新的
+NVIDIA 显卡（RTX 30/40/50、A100、H100）。矿池已内置（`pearl.tw-pool.com:50001`）。
 
-1. In HiveOS, open your worker → **Flight Sheets** → create a new flight sheet (or **Wallets** first).
-2. **Add a Custom Miner** (Flight Sheet → Miner → `+` → *Setup Miner Config* → **Custom**):
-   - **Miner name:** `tw-pearl-miner`
-   - **Installation URL:**
+## 安装
+
+1. 在 HiveOS 中打开你的矿机 → **飞行表（Flight Sheets）** → 新建一个飞行表（或先到 **钱包 Wallets**）。
+2. **添加自定义矿工**（飞行表 → Miner → `+` → *Setup Miner Config* → **Custom**）：
+   - **矿工名称（Miner name）：** `tw-pearl-miner`
+   - **安装 URL（Installation URL）：**
      ```
      https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-1.7.0.tar.gz
      ```
-     (if you publish GitHub Releases, you can instead use
-     `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-1.7.0.tar.gz`)
-   - **Hash algorithm:** `pearl` (free text — informational only)
-3. Fill the flight-sheet fields:
-   | Field | Value |
+     （如果你使用 GitHub Releases，也可以用
+     `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-1.7.0.tar.gz`）
+   - **哈希算法（Hash algorithm）：** `pearl`（自由文本 —— 仅供参考）
+3. 填写飞行表字段：
+   | 字段 | 值 |
    |-------|-------|
-   | **Wallet and worker template** | your `prl1...` payout address — **or** your pool username (set your wallet on the pool website first; the pool resolves it) |
-   | **Pool URL** | *leave blank* (built-in pool) — or `host:port` to override |
+   | **Wallet and worker template** | 你的 `prl1...` 收款地址 —— **或** 你的矿池用户名（请先在矿池网站设置好钱包地址，矿池会自动解析） |
+   | **Pool URL** | *留空*（使用内置矿池）—— 或填 `host:port` 覆盖 |
    | **Pass** | `x` |
-   | **Extra config arguments** | *(optional)* extra env lines, one per line — e.g. `CN2=1` (see *Restricted network?* below) |
-4. Apply the flight sheet to the rig. HiveOS downloads the package, installs it to
-   `/hive/miners/custom/tw-pearl-miner/`, and starts mining.
+   | **Extra config arguments** | *（可选）* 额外的环境变量，每行一个 —— 例如 `CN2=1`（见下方 *直连矿池困难？*） |
+4. 把飞行表应用到矿机。HiveOS 会下载安装包，安装到
+   `/hive/miners/custom/tw-pearl-miner/`，然后开始挖矿。
 
-The worker name is taken from the rig automatically; hashrate (in TH/s) and accepted/rejected
-shares show up on the HiveOS dashboard.
+矿机名会自动取自 rig；算力（TH/s）与接受/拒绝份额会显示在 HiveOS 面板上。
 
-## Package contents
+## 安装包内容
 ```
 tw-pearl-miner/
-  pearl-gpu-miner       miner binary (fat: sm_80/86/89/90/120a + PTX)
-  libpearlkernel.so     CUDA kernel
-  libcudart.so.13       CUDA runtime
-  h-manifest.conf       miner metadata
-  h-config.sh           builds the run config from the flight sheet
-  h-run.sh              launches the miner
-  h-stats.sh            reports hashrate/shares to HiveOS
+  pearl-gpu-miner       矿工二进制（fat：sm_80/86/89/90/120a + PTX）
+  libpearlkernel.so     CUDA 内核
+  libcudart.so.13       CUDA 运行库
+  h-manifest.conf       矿工元数据
+  h-config.sh           从飞行表生成运行配置
+  h-run.sh              启动矿工
+  h-stats.sh            向 HiveOS 上报算力/份额
 ```
 
-## Notes
-- **GPU support:** Ampere or newer (needs the SM80 int8 tensor cores). Pre-Ampere (GTX 10xx /
-  RTX 20xx) is **not** supported.
-- **Driver:** **≥ 580.65** (Linux) — a CUDA 13 capable driver. Update on the rig via the HiveOS web
-  UI (worker → ⋮ → *Upgrade* / NVIDIA driver) or Hive Shell `nvidia-driver-update`. If the miner log
-  shows `cudaGetDeviceCount returned 0` / `pk_init failed`, the driver is **too old** — `nvidia-smi`
-  must report "CUDA Version: 13.0" or higher.
-- **Stuck on driver 570–580 (can't reach CUDA 13)?** Use the **CUDA-12.8** custom-miner package as
-  your Installation URL instead — same speed, runs on driver ≥ 570.26 (ships `libcudart.so.12`):
+## 说明
+- **显卡支持：** Ampere 或更新（需要 SM80 int8 张量核心）。不支持 Ampere 之前的显卡
+  （GTX 10xx / RTX 20xx）。
+- **驱动：** **≥ 580.65**（Linux）—— 支持 CUDA 13 的驱动。可在 HiveOS 网页端升级（矿机 → ⋮ →
+  *Upgrade* / NVIDIA driver）或在 Hive Shell 里运行 `nvidia-driver-update`。如果矿工日志出现
+  `cudaGetDeviceCount returned 0` / `pk_init failed`，说明驱动**太旧** —— `nvidia-smi` 必须显示
+  “CUDA Version: 13.0” 或更高。
+- **卡在 570–580 驱动（上不了 CUDA 13）？** 把安装 URL 换成 **CUDA-12.8** 版安装包 —— 速度相同，
+  可在驱动 ≥ 570.26 上运行（内置 `libcudart.so.12`）：
   ```
   https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-1.7.0.c12.tar.gz
   ```
-- **Restricted network?** If the normal pool address is unreachable from your network, set
-  **Extra config arguments = `CN2=1`** to use an alternate, obfuscated connection path. Use the
-  `key=value` form `CN2=1` (a bare `--cn2` line does **not** work on HiveOS — it would be read as a
-  shell command). The miner's startup log shows which connection mode it's using.
-- **TLS:** the default pool connection is encrypted with TLS.
-- **Hashrate units:** the miner's metric is in TH/s; HiveOS displays it scaled (the `total khs`
-  field is `TH/s × 1e9`).
+- **直连矿池困难？** 如果你的网络无法连接默认矿池地址，可在
+  **Extra config arguments** 里设置 `CN2=1` 启用**中继线路**（备用、混淆的连接路径）——挖矿与
+  收款完全不变，只是换一条到矿池的网络路径。
+  - `CN2=1`：自动模式（推荐），自动挑选可用中继节点，连接失败时自动切换。
+  - `PEARL_CN2=<编号>`：固定使用某个中继节点（编号 0–5），一般用于排查。
+  - ⚠️ 在 HiveOS 上**必须**用 `key=value` 形式（`CN2=1` / `PEARL_CN2=2`）——单独写一行 `--cn2`
+    **不行**（会被当成 shell 命令）。矿工的启动日志会显示当前使用的连接模式。
+- **TLS：** 默认矿池连接使用 TLS 加密。
+- **算力单位：** 矿工的指标是 TH/s；HiveOS 按比例显示（`total khs` 字段 = `TH/s × 1e9`）。

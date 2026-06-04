@@ -2,18 +2,8 @@
 
 **English** | [简体中文](README.md) | [繁體中文](README.zh-TW.md)　·　[Latest release ↗](https://github.com/egg5233/tw-pearl-miner/releases/latest)
 
-Pre-built GPU miner for the **Pearl** pool (`pearl.tw-pool.com:50001`, built in) — one binary for any **Ampere-or-newer NVIDIA GPU** (RTX 30 / 40 / 50, A100, H100) on **Windows · Linux · HiveOS**. Pre-Ampere (GTX 10xx / RTX 20xx) is not supported.
 
-> **Latest (v1.6.0):** smoother dashboard hashrate — the miner now reports its hashrate to the pool for a steadier on-screen reading. Display-only (no change to mining, shares, or earnings); tune/disable with `POOL_HASHRATE_REPORT_SECS`. [Full changelog ↗](https://github.com/egg5233/tw-pearl-miner/releases)
-
-## Download
-
-**Two questions:**
-
-1. **What are you running?** — Windows, Linux (desktop / server), or HiveOS.
-2. **NVIDIA driver version?** — run `nvidia-smi`: **≥ 580.65** → normal **CUDA 13** build · **570.26–580** → **CUDA 12** build (`-cuda12` / `.c12`) · **< 570.26** → update your driver first.
-
-| Your setup | NVIDIA driver | Download |
+| System | NVIDIA driver | Download |
 |---|---|---|
 | **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-windows.zip) |
 | **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-linux.zip) |
@@ -21,17 +11,12 @@ Pre-built GPU miner for the **Pearl** pool (`pearl.tw-pool.com:50001`, built in)
 | **Linux** — older driver | 570.26–580 | [tw-pearl-miner-1.7.0-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-1.7.0-cuda12.tar.gz) |
 | **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-1.7.0.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-1.7.0.c12.tar.gz) |
 
-> `.tar.gz` / `.zip` (Linux) = the **same build**, different archive format. The `cuda12` / `.c12` builds are **identical in speed and features** — only the bundled CUDA runtime differs, so they start on older (≥ 570.26) drivers. Use them only if the normal build exits with `cudaGetDeviceCount returned 0` / `pk_init failed`. Verify any download with [`SHA256SUMS`](SHA256SUMS): `sha256sum -c SHA256SUMS`.
-
 ## Quick start
 
 ### Windows
 1. Download and extract `tw-pearl-miner-windows.zip`.
 2. Edit `start.bat` and set your `WALLET` (your `prl1...` address) — or just run it and paste the address when asked.
 3. Double-click `start.bat`.
-
-### Linux
-> ⚠️ Download with the table links or the `wget`/`curl` below — do **not** open the file on github.com and "Save As" (that saves the *web page* as HTML, which can't be extracted — the #1 cause of "can't unzip").
 
 ```bash
 # one-line install — downloads, extracts, prompts for wallet, runs
@@ -45,7 +30,7 @@ bash start.sh          # optional: bash start.sh <worker-name>
 ```
 
 ### HiveOS
-Add a Custom Miner with the installation URL from [`hiveos/README.md`](hiveos/README.md) and set your wallet in the flight sheet. Full instructions there.
+Add a Custom Miner with the installation URL from [`hiveos/README.en.md`](hiveos/README.en.md) and set your wallet in the flight sheet. Full instructions there.
 
 <details>
 <summary><b>Expected hashrate</b> — RTX 30 / 40 / 50, A100, H100</summary>
