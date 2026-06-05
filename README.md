@@ -5,11 +5,11 @@
 
 | 系统 | NVIDIA 驱动 | 下载 |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-windows.zip) |
-| **Linux**（桌面 / 服务器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-linux.zip) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-1.7.0.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-1.7.0.tar.gz) |
-| **Linux** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-1.7.0-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-1.7.0-cuda12.tar.gz) |
-| **HiveOS** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-1.7.0.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-1.7.0.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.0/tw-pearl-miner-windows.zip) |
+| **Linux**（桌面 / 服务器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.0/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.0/tw-pearl-miner-linux.zip) |
+| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-1.8.0.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.0/tw-pearl-miner-1.8.0.tar.gz) |
+| **Linux** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-1.8.0-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.0/tw-pearl-miner-1.8.0-cuda12.tar.gz) |
+| **HiveOS** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-1.8.0.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.0/tw-pearl-miner-1.8.0.c12.tar.gz) |
 
 ## 快速开始
 
@@ -23,7 +23,7 @@
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 
 # ……或手动（.tar.gz 或 .zip，内容相同）：
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.7.0/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.0/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # 设置 WALLET=你的 prl1... 地址
 bash start.sh          # 可选：bash start.sh <worker名称>
