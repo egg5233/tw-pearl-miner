@@ -12,10 +12,10 @@ NVIDIA 顯示卡（RTX 30/40/50、A100、H100）。礦池已內建（`pearl.tw-p
    - **礦工名稱（Miner name）：** `tw-pearl-miner`
    - **安裝 URL（Installation URL）：**
      ```
-     https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.1/tw-pearl-miner-1.8.1.tar.gz
+     https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.0/tw-pearl-miner-1.9.0.tar.gz
      ```
      （如果你使用 GitHub Releases，也可以用
-     `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-1.8.1.tar.gz`）
+     `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-1.9.0.tar.gz`）
    - **雜湊演算法（Hash algorithm）：** `pearl`（自由文字 —— 僅供參考）
 3. 填寫飛行表欄位：
    | 欄位 | 值 |
@@ -55,7 +55,7 @@ tw-pearl-miner/
 - **卡在 570–580 驅動（上不了 CUDA 13）？** 把安裝 URL 換成 **CUDA-12.8** 版安裝包 —— 速度相同，
   可在驅動 ≥ 570.26 上執行（內建 `libcudart.so.12`）：
   ```
-  https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.1/tw-pearl-miner-1.8.1.c12.tar.gz
+  https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.0/tw-pearl-miner-1.9.0.c12.tar.gz
   ```
 - **直連礦池困難？** 如果你的網路無法連線預設礦池位址，可在
   **Extra config arguments** 裡設定 `CN2=1` 啟用**中繼線路**（備用、混淆的連線路徑）——挖礦與

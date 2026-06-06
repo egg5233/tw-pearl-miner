@@ -5,11 +5,11 @@
 
 | System | NVIDIA driver | Download |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.1/tw-pearl-miner-windows.zip) |
-| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.1/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.1/tw-pearl-miner-linux.zip) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-1.8.1.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.1/tw-pearl-miner-1.8.1.tar.gz) |
-| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-1.8.1-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.1/tw-pearl-miner-1.8.1-cuda12.tar.gz) |
-| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-1.8.1.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.1/tw-pearl-miner-1.8.1.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.0/tw-pearl-miner-windows.zip) |
+| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.0/tw-pearl-miner-linux.tar.gz) · [.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.0/tw-pearl-miner-linux.zip) |
+| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-1.9.0.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.0/tw-pearl-miner-1.9.0.tar.gz) |
+| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-1.9.0-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.0/tw-pearl-miner-1.9.0-cuda12.tar.gz) |
+| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-1.9.0.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.0/tw-pearl-miner-1.9.0.c12.tar.gz) |
 
 ## Quick start
 
@@ -23,7 +23,7 @@
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 
 # ...or manually (.tar.gz or .zip — same files):
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.8.1/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.0/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # set WALLET=your prl1... address
 bash start.sh          # optional: bash start.sh <worker-name>
