@@ -12,10 +12,10 @@ NVIDIA GPU (RTX 30/40/50, A100, H100). The pool is built in (`pearl.tw-pool.com:
    - **Miner name:** `tw-pearl-miner`
    - **Installation URL:**
      ```
-     https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.0/tw-pearl-miner-1.9.0.tar.gz
+     https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.1/tw-pearl-miner-1.9.1.tar.gz
      ```
      (if you publish GitHub Releases, you can instead use
-     `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-1.9.0.tar.gz`)
+     `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-1.9.1.tar.gz`)
    - **Hash algorithm:** `pearl` (free text — informational only)
 3. Fill the flight-sheet fields:
    | Field | Value |
@@ -52,7 +52,7 @@ tw-pearl-miner/
 - **Stuck on driver 570–580 (can't reach CUDA 13)?** Use the **CUDA-12.8** custom-miner package as
   your Installation URL instead — same speed, runs on driver ≥ 570.26 (ships `libcudart.so.12`):
   ```
-  https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.0/tw-pearl-miner-1.9.0.c12.tar.gz
+  https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.1/tw-pearl-miner-1.9.1.c12.tar.gz
   ```
 - **TLS:** the default pool connection is encrypted with TLS.
 - **Hashrate units:** the miner's metric is in TH/s; HiveOS displays it scaled (the `total khs`
