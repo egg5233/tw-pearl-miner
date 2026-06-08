@@ -15,6 +15,8 @@ export LD_LIBRARY_PATH="$MINER_DIR:${LD_LIBRARY_PATH:-}"
 [[ -n $POOL_TLS  ]] && export POOL_TLS
 # CN2=1 in the flight-sheet "Extra config arguments" enables the alternate obfuscated path.
 [[ -n $CN2 ]] && export CN2
+[[ -n $NO_CPU   ]] && export NO_CPU
+[[ -n $POOL_PROXY ]] && export POOL_PROXY
 mkdir -p "$(dirname "$CUSTOM_LOG_BASENAME")"
 
 [[ -z $WALLET ]] && { echo "tw-pearl-miner: set your prl1... payout address in the flight sheet 'Wallet and worker template' field"; sleep 10; exit 1; }
