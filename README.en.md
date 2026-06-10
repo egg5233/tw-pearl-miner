@@ -46,7 +46,7 @@ Approximate Pearl hashrate per card at **stock clocks** (the miner auto-selects 
 | RTX 5070 Ti | 167.7 | RTX 3090 | 108.7 | | |
 | RTX 5070 | 118.4 | | | | |
 
-Models not listed are supported too (Ampere or newer); figures to be added. Datacenter figures are for the **SXM** variants — **PCIe** versions run somewhat lower.
+Models not listed are supported too if they have **≥ 12 GB VRAM** (Ampere or newer); figures to be added. Cards under 12 GB are not supported yet (see requirements). Datacenter figures are for the **SXM** variants — **PCIe** versions run somewhat lower.
 
 </details>
 
@@ -70,6 +70,7 @@ The miner auto-picks the best matrix shape for your card, prints a periodic hash
 
 **Requirements**
 - **NVIDIA GPU, Ampere or newer** (RTX 30 / 40 / 50, A100, H100). Pre-Ampere (GTX 10xx / RTX 20xx) not supported.
+- **≥ 12 GB VRAM.** The current mining shape needs about 12 GB of VRAM — 8 GB / 10 GB cards (e.g. 3060 Ti / 3070 / 3080 10G / 4060 Ti 8G / 5060 Ti 8G) are not supported yet (the miner fails at startup); a low-VRAM mode is planned for a 2.0.x release.
 - **NVIDIA driver ≥ 580.65 (Linux) / ≥ 580.88 (Windows)** for the CUDA 13 build, or **≥ 570.26** for the CUDA 12 build. Nothing else to install — the CUDA runtime ships in the bundle.
 - The pool connection transport (TLS / plaintext) follows your `--pool` scheme prefix (see the command line above).
 
