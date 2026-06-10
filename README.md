@@ -41,7 +41,7 @@ bash start.sh          # 可选：bash start.sh <worker名称>
 
 | RTX 50（Blackwell） | TH/s | RTX 40 / 30 | TH/s | 数据中心 | TH/s |
 |---|---|---|---|---|---|
-| RTX 5090 | 测试中 | RTX 4090 | ~278 | A100 SXM4 40 GB | 164.8 |
+| RTX 5090 | 360 | RTX 4090 | ~278 | A100 SXM4 40 GB | 164.8 |
 | RTX 5080 | 198.1 | RTX 4080 | 176.2 | H100 SXM | 测试中 |
 | RTX 5070 Ti | 167.7 | RTX 3090 | 108.7 | | |
 | RTX 5070 | 118.4 | | | | |
