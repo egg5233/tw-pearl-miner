@@ -4,7 +4,7 @@
 # or: ./install.sh [install-dir]   (default: ~/tw-pearl-miner)
 set -euo pipefail
 
-URL="https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.1/tw-pearl-miner-linux.tar.gz"
+URL="https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-linux.tar.gz"
 DEST="${1:-$HOME/tw-pearl-miner}"
 
 command -v curl >/dev/null || { echo "need 'curl'"; exit 1; }
@@ -15,7 +15,7 @@ chmod +x "$DEST/pearl-gpu-miner" "$DEST/start.sh"
 
 echo
 echo "Installed. Next:"
-echo "  1) edit $DEST/start.sh and set WALLET to your prl1... address"
+echo "  1) edit $DEST/start.sh and set WALLET (your prl1... address) and POOL (your mining pool)"
 echo "  2) cd $DEST && ./start.sh"
 echo
 echo "Requires an Ampere-or-newer NVIDIA GPU and a CUDA-13 driver (>=580)."

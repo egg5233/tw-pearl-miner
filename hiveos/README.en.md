@@ -2,8 +2,12 @@
 
 **English** | [简体中文](README.md) | [繁體中文](README.zh-TW.md)
 
-A HiveOS **Custom Miner** package for the Pearl GPU miner. Works on any Ampere-or-newer
-NVIDIA GPU (RTX 30/40/50, A100, H100). The pool is built in (`pearl.tw-pool.com:50001`).
+A HiveOS **Custom Miner** package for the Pearl GPU miner. Works on any Ampere-or-newer NVIDIA GPU
+(RTX 30/40/50, A100, H100).
+
+> **2.0.0 change:** there is **no built-in pool** — you set your mining pool in the **Pool URL** field
+> (required), and **Extra config arguments** are now miner **CLI flags** (e.g. `--gpus 0,1`), not
+> environment variables. See *Migrating from 1.x* below.
 
 ## Install
 
@@ -12,23 +16,59 @@ NVIDIA GPU (RTX 30/40/50, A100, H100). The pool is built in (`pearl.tw-pool.com:
    - **Miner name:** `tw-pearl-miner`
    - **Installation URL:**
      ```
-     https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.1/tw-pearl-miner-1.9.1.tar.gz
+     https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-2.0.0.tar.gz
      ```
-     (if you publish GitHub Releases, you can instead use
-     `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-1.9.1.tar.gz`)
+     (or `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-2.0.0.tar.gz`)
    - **Hash algorithm:** `pearl` (free text — informational only)
 3. Fill the flight-sheet fields:
    | Field | Value |
    |-------|-------|
-   | **Wallet and worker template** | your `prl1...` payout address — **or** your pool username (set your wallet on the pool website first; the pool resolves it) |
-   | **Pool URL** | *leave blank* (built-in pool) — or `host:port` to override |
+   | **Wallet and worker template** | your `prl1...` payout address (or `prl1....%WORKER_NAME%`; a `.worker` suffix becomes the worker name) |
+   | **Pool URL** | **REQUIRED** — your pool's `host:port`, or with an explicit transport scheme (see below) |
    | **Pass** | `x` |
-   | **Extra config arguments** | *(optional)* extra env lines, one per line |
-4. Apply the flight sheet to the rig. HiveOS downloads the package, installs it to
-   `/hive/miners/custom/tw-pearl-miner/`, and starts mining.
+   | **Extra config arguments** | *(optional)* extra miner **CLI flags**, e.g. `--gpus 0,1` (see *Extra config* below). **Not** environment variables. |
+4. Apply the flight sheet. HiveOS downloads the package to `/hive/miners/custom/tw-pearl-miner/` and
+   starts mining.
 
-The worker name is taken from the rig automatically; hashrate (in TH/s) and accepted/rejected
-shares show up on the HiveOS dashboard.
+![HiveOS flight-sheet reference](hive_setting.png)
+
+*HiveOS flight-sheet reference — Custom configuration: miner name, installation URL, wallet template,
+**Pool URL** (e.g. `stratum+ssl://hk.pearl.herominers.com:1200`), Pass=`x`, and Extra config arguments
+as CLI flags (e.g. `--gpus 0,1`).*
+
+The rig name is taken automatically; hashrate (TH/s) and accepted/rejected shares show on the HiveOS
+dashboard.
+
+## Pool URL (required — scheme selects the transport)
+
+The Pool URL is passed to the miner **verbatim**; the URL scheme decides how it connects:
+
+| Pool URL | Transport |
+|----------|-----------|
+| `host:port` (bare) | a built-in **preset** pool (herominers / kryptex / luckypool) |
+| `stratum+ssl://host:port` | TLS (certificate verified) |
+| `stratum+tcp://host:port` | plaintext TCP |
+| `stratum+ssl-insecure://host:port` | TLS without certificate verification (e.g. a relay / self-signed front, such as `stratum+ssl-insecure://<ip>:1200`) |
+
+An arbitrary (non-preset) pool needs an explicit scheme. Example: `stratum+ssl://hk.pearl.herominers.com:1200`.
+
+## Extra config = CLI flags
+
+Whatever you put in **Extra config arguments** is appended to the miner command line verbatim
+(SRBMiner-style), one or more flags separated by spaces or newlines. Examples:
+- `--gpus 0,1` — mine only on GPU 0 and 1
+- `--no-tui` — disable the full-screen TUI (HiveOS already runs headless; this is automatic under the
+  log, so you rarely need it)
+
+## Migrating from 1.x
+
+- **Pool URL is now required.** 1.x used a built-in pool with the field left blank. Set your pool's
+  `host:port` (with a scheme if it's not a preset). If you leave it blank the miner will not start and
+  the log will tell you to set it.
+- **Extra config is CLI flags, not env vars.** The old `POOL_TLS=0`, `CN2=1`, `PEARL_CN2=N`,
+  `POOL_HOST=`, `NO_CPU=` style lines are **removed** and will be rejected with a migration message in
+  the log. Use the Pool URL scheme for transport (e.g. `stratum+tcp://` instead of `POOL_TLS=0`), and
+  pass real `--flags` for everything else.
 
 ## Package contents
 ```
@@ -36,24 +76,22 @@ tw-pearl-miner/
   pearl-gpu-miner       miner binary (fat: sm_80/86/89/90/120a + PTX)
   libpearlkernel.so     CUDA kernel
   libcudart.so.13       CUDA runtime
-  h-manifest.conf       miner metadata
-  h-config.sh           builds the run config from the flight sheet
+  h-manifest.conf       miner metadata (CUSTOM_VERSION=2.0.0)
+  h-config.sh           flight sheet -> miner argv
   h-run.sh              launches the miner
   h-stats.sh            reports hashrate/shares to HiveOS
 ```
 
 ## Notes
-- **GPU support:** Ampere or newer (needs the SM80 int8 tensor cores). Pre-Ampere (GTX 10xx /
-  RTX 20xx) is **not** supported.
-- **Driver:** **≥ 580.65** (Linux) — a CUDA 13 capable driver. Update on the rig via the HiveOS web
-  UI (worker → ⋮ → *Upgrade* / NVIDIA driver) or Hive Shell `nvidia-driver-update`. If the miner log
+- **GPU support:** Ampere or newer (needs SM80 int8 tensor cores). Pre-Ampere (GTX 10xx / RTX 20xx)
+  is not supported.
+- **Driver:** **≥ 580.65** (Linux) — a CUDA-13 capable driver. Upgrade in the HiveOS web UI
+  (worker → ⋮ → *Upgrade* / NVIDIA driver) or run `nvidia-driver-update` in the Hive Shell. If the log
   shows `cudaGetDeviceCount returned 0` / `pk_init failed`, the driver is **too old** — `nvidia-smi`
   must report "CUDA Version: 13.0" or higher.
-- **Stuck on driver 570–580 (can't reach CUDA 13)?** Use the **CUDA-12.8** custom-miner package as
-  your Installation URL instead — same speed, runs on driver ≥ 570.26 (ships `libcudart.so.12`):
+- **Stuck on a 570–580 driver (no CUDA 13)?** Use the **CUDA-12.8** package instead — same speed, runs
+  on driver ≥ 570.26 (bundles `libcudart.so.12`):
   ```
-  https://github.com/egg5233/tw-pearl-miner/releases/download/v1.9.1/tw-pearl-miner-1.9.1.c12.tar.gz
+  https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-2.0.0.c12.tar.gz
   ```
-- **TLS:** the default pool connection is encrypted with TLS.
-- **Hashrate units:** the miner's metric is in TH/s; HiveOS displays it scaled (the `total khs`
-  field is `TH/s × 1e9`).
+- **Hashrate units:** the miner reports TH/s; HiveOS scales it (`total khs` = `TH/s × 1e9`).
