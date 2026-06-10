@@ -40,9 +40,9 @@ bash start.sh          # 可选：bash start.sh <worker名称>
 | RTX 50（Blackwell） | TH/s | RTX 40（Ada） | TH/s | 数据中心 | TH/s |
 |---|---|---|---|---|---|
 | RTX 5090 | ~325 | RTX 4090 | ~250 | H100 SXM | ~625 |
-| RTX 5080 | ~198 | RTX 4080 | ~160 *(估算)* | A100 SXM4 40 GB | ~170 |
+| RTX 5080 | ~198 | RTX 4080 | ~176 | A100 SXM4 40 GB | ~170 |
 | RTX 5070 Ti | ~171 | RTX 4070 Ti | ~133 | | |
-| RTX 5070 | ~111 | RTX 4070 | ~102 | | |
+| RTX 5070 | ~118 | RTX 4070 | ~102 | | |
 | RTX 5060 Ti | ~76 | RTX 4060 Ti | ~69 | | |
 | RTX 5060 | ~63 | | | | |
 
