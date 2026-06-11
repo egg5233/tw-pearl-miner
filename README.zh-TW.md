@@ -7,11 +7,11 @@
 
 | 系統 | NVIDIA 驅動 | 下載 |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-windows.zip) |
-| **Linux**（桌面 / 伺服器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-linux.tar.gz) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.0.1.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-2.0.1.tar.gz) |
-| **Linux** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-2.0.1-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-2.0.1-cuda12.tar.gz) |
-| **HiveOS** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-2.0.1.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-2.0.1.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.2/tw-pearl-miner-windows.zip) |
+| **Linux**（桌面 / 伺服器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.2/tw-pearl-miner-linux.tar.gz) |
+| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.0.2.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.2/tw-pearl-miner-2.0.2.tar.gz) |
+| **Linux** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-2.0.2-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.2/tw-pearl-miner-2.0.2-cuda12.tar.gz) |
+| **HiveOS** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-2.0.2.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.2/tw-pearl-miner-2.0.2.c12.tar.gz) |
 
 ## 快速開始
 
@@ -25,7 +25,7 @@
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 
 # ……或手動：
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.2/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # 設定 WALLET=你的 prl1... 位址、POOL=你的礦池位址
 bash start.sh          # 選用：bash start.sh <worker名稱>
@@ -59,13 +59,15 @@ bash start.sh          # 選用：bash start.sh <worker名稱>
 pearl-gpu-miner --pool <礦池位址> --wallet <prl1...位址> [--worker <名稱>] [--gpus 0,1]
 ```
 - `--pool`（必填）：礦池位址，支援以下寫法：
-  - `host:port` —— 知名礦池自動判別連線方式（例：`hk.pearl.herominers.com:1200`）。
+  - `host:port` —— **自動偵測連線方式**（自 v2.0.2 起適用於任意礦池：啟動時自動判斷 TLS 或明文，無需手填協定；例：`hk.pearl.herominers.com:1200`）。
   - `stratum+ssl://host:port` —— TLS 加密並驗證憑證。
   - `stratum+tcp://host:port` —— 明文連線。
   - `stratum+ssl-insecure://host:port` —— TLS 加密但不驗證憑證（中繼 / IP 直連用）。
 - `--wallet`（必填）：你的收款位址。
 - `--worker`（預設：機器名稱）：礦池上顯示的礦機名稱。
 - `--gpus`（預設：全部）：以逗號分隔的裝置編號，例如 `0,1,2,3`。
+- `--low-vram`（v2.0.2）：在所有顯示卡上強制低顯示記憶體模式（釋放約 8 GB 顯示記憶體、速度不變；8–10 GB 顯示卡本就自動啟用）。適合共享 GPU 的機器。
+- `--no-tui`（v2.0.2）：使用經典單行輸出。預設在互動終端中自動啟用全螢幕介面（即時顯示各卡算力、溫度、份額與日誌）；重新導向 / 指令稿 / HiveOS 環境自動回退單行模式。
 
 挖礦程式會自動為你的顯示卡選擇最佳矩陣形狀，定期印出一行算力，持續挖礦直到你停止（Ctrl+C），並在礦池重啟 / 網路抖動 / 連線卡死時**自動重連**。
 

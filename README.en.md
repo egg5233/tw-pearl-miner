@@ -7,11 +7,11 @@
 
 | System | NVIDIA driver | Download |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-windows.zip) |
-| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-linux.tar.gz) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.0.1.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-2.0.1.tar.gz) |
-| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-2.0.1-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-2.0.1-cuda12.tar.gz) |
-| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-2.0.1.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-2.0.1.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.2/tw-pearl-miner-windows.zip) |
+| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.2/tw-pearl-miner-linux.tar.gz) |
+| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.0.2.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.2/tw-pearl-miner-2.0.2.tar.gz) |
+| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-2.0.2-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.2/tw-pearl-miner-2.0.2-cuda12.tar.gz) |
+| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-2.0.2.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.2/tw-pearl-miner-2.0.2.c12.tar.gz) |
 
 ## Quick start
 
@@ -25,7 +25,7 @@
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 
 # ...or manually:
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.2/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # set WALLET=your prl1... address, POOL=your mining pool
 bash start.sh          # optional: bash start.sh <worker-name>
@@ -59,13 +59,15 @@ Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to
 pearl-gpu-miner --pool <pool> --wallet <prl1...address> [--worker <name>] [--gpus 0,1]
 ```
 - `--pool` (required): your mining pool. Accepted forms:
-  - `host:port` — well-known pools are auto-detected (e.g. `hk.pearl.herominers.com:1200`).
+  - `host:port` — **transport auto-detected** (since v2.0.2 this works for ANY pool: the miner probes TLS vs plaintext at startup, no scheme needed; e.g. `hk.pearl.herominers.com:1200`).
   - `stratum+ssl://host:port` — TLS with certificate verification.
   - `stratum+tcp://host:port` — plaintext.
   - `stratum+ssl-insecure://host:port` — TLS without certificate verification (relays / direct-IP connections).
 - `--wallet` (required): your payout address.
 - `--worker` (default: machine name): rig name shown on the pool.
 - `--gpus` (default: all): comma-separated device ids, e.g. `0,1,2,3`.
+- `--low-vram` (v2.0.2): force the low-VRAM mode on every GPU (frees ~8 GB with no speed change; 8–10 GB cards already enable it automatically). Useful on shared-GPU rigs.
+- `--no-tui` (v2.0.2): use the classic single-line output. A full-screen UI (live per-card hashrate, temps, shares and a log panel) is enabled automatically in an interactive terminal; redirected / scripted / HiveOS environments fall back to line mode automatically.
 
 The miner auto-picks the best matrix shape for your card, prints a periodic hashrate line, mines until you stop it (Ctrl+C), and **auto-reconnects** through pool restarts / network blips / stalled links.
 
