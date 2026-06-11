@@ -7,11 +7,11 @@
 
 | System | NVIDIA driver | Download |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-windows.zip) |
-| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-linux.tar.gz) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.0.0.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-2.0.0.tar.gz) |
-| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-2.0.0-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-2.0.0-cuda12.tar.gz) |
-| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-2.0.0.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-2.0.0.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-windows.zip) |
+| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-linux.tar.gz) |
+| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.0.1.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-2.0.1.tar.gz) |
+| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-2.0.1-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-2.0.1-cuda12.tar.gz) |
+| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-2.0.1.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-2.0.1.c12.tar.gz) |
 
 ## Quick start
 
@@ -25,7 +25,7 @@
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 
 # ...or manually:
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # set WALLET=your prl1... address, POOL=your mining pool
 bash start.sh          # optional: bash start.sh <worker-name>
@@ -45,8 +45,9 @@ Approximate Pearl hashrate per card at **stock clocks** (the miner auto-selects 
 | RTX 5080 | 198.1 | RTX 4080 | 176.2 | H100 SXM | 134.7 |
 | RTX 5070 Ti | 167.7 | RTX 3090 | 108.7 | | |
 | RTX 5070 | 118.4 | | | | |
+| RTX 5060 8G | ~70 | | | | |
 
-Models not listed are supported too if they have **≥ 12 GB VRAM** (Ampere or newer); figures to be added. Cards under 12 GB are not supported yet (see requirements). Datacenter figures are for the **SXM** variants — **PCIe** versions run somewhat lower.
+Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to be added. Datacenter figures are for the **SXM** variants — **PCIe** versions run somewhat lower.
 
 </details>
 
@@ -70,7 +71,7 @@ The miner auto-picks the best matrix shape for your card, prints a periodic hash
 
 **Requirements**
 - **NVIDIA GPU, Ampere or newer** (RTX 30 / 40 / 50, A100, H100). Pre-Ampere (GTX 10xx / RTX 20xx) not supported.
-- **≥ 12 GB VRAM.** The current mining shape needs about 12 GB of VRAM — 8 GB / 10 GB cards (e.g. 3060 Ti / 3070 / 3080 10G / 4060 Ti 8G / 5060 Ti 8G) are not supported yet (the miner fails at startup); a low-VRAM mode is planned for a 2.0.x release.
+- **≥ 8 GB VRAM.** 8 GB / 10 GB cards (e.g. 3060 Ti / 3070 / 3080 10G / 4060 Ti 8G / 5060 Ti 8G) **automatically use the low-VRAM mode** since v2.0.1 — no speed penalty; ≥ 12 GB cards are completely unchanged. If VRAM is genuinely insufficient, the miner shows a clear bilingual message and skips the card.
 - **NVIDIA driver ≥ 580.65 (Linux) / ≥ 580.88 (Windows)** for the CUDA 13 build, or **≥ 570.26** for the CUDA 12 build. Nothing else to install — the CUDA runtime ships in the bundle.
 - The pool connection transport (TLS / plaintext) follows your `--pool` scheme prefix (see the command line above).
 

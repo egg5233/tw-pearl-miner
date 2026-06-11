@@ -7,11 +7,11 @@
 
 | 系统 | NVIDIA 驱动 | 下载 |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-windows.zip) |
-| **Linux**（桌面 / 服务器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-linux.tar.gz) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.0.0.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-2.0.0.tar.gz) |
-| **Linux** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-2.0.0-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-2.0.0-cuda12.tar.gz) |
-| **HiveOS** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-2.0.0.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-2.0.0.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-windows.zip) |
+| **Linux**（桌面 / 服务器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-linux.tar.gz) |
+| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.0.1.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-2.0.1.tar.gz) |
+| **Linux** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-2.0.1-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-2.0.1-cuda12.tar.gz) |
+| **HiveOS** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-2.0.1.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-2.0.1.c12.tar.gz) |
 
 ## 快速开始
 
@@ -25,7 +25,7 @@
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 
 # ……或手动：
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.0/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.1/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # 设置 WALLET=你的 prl1... 地址、POOL=你的矿池地址
 bash start.sh          # 可选：bash start.sh <worker名称>
@@ -45,8 +45,9 @@ bash start.sh          # 可选：bash start.sh <worker名称>
 | RTX 5080 | 198.1 | RTX 4080 | 176.2 | H100 SXM | 测试中 |
 | RTX 5070 Ti | 167.7 | RTX 3090 | 108.7 | | |
 | RTX 5070 | 118.4 | | | | |
+| RTX 5060 8G | ~70 | | | | |
 
-未列出的 **显存 ≥ 12 GB** 型号同样支持（Ampere 及更新），数值后续补充；显存低于 12 GB 的型号暂不支持（见系统要求）。数据中心卡的数值是 **SXM** 版本 —— **PCIe** 版本会略低一些。
+未列出的型号同样支持（Ampere 及更新，显存 ≥ 8 GB），数值后续补充。数据中心卡的数值是 **SXM** 版本 —— **PCIe** 版本会略低一些。
 
 </details>
 
@@ -70,7 +71,7 @@ pearl-gpu-miner --pool <矿池地址> --wallet <prl1...地址> [--worker <名称
 
 **系统要求**
 - **NVIDIA 显卡，Ampere 或更新**（RTX 30 / 40 / 50、A100、H100）。不支持 Ampere 之前的显卡（GTX 10xx / RTX 20xx）。
-- **显存 ≥ 12 GB**。当前版本的挖矿形状需要约 12 GB 显存 —— 8 GB / 10 GB 显卡（如 3060 Ti / 3070 / 3080 10G / 4060 Ti 8G / 5060 Ti 8G）暂不支持（无法启动）；低显存模式计划在 2.0.x 版本提供。
+- **显存 ≥ 8 GB**。8 GB / 10 GB 显卡（如 3060 Ti / 3070 / 3080 10G / 4060 Ti 8G / 5060 Ti 8G）自 v2.0.1 起**自动启用低显存模式**，速度不打折；≥ 12 GB 显卡行为完全不变。显存确实不足时会显示清晰的中英文提示并跳过该卡。
 - **NVIDIA 驱动 ≥ 580.65（Linux）/ ≥ 580.88（Windows）** 对应 CUDA 13 版本；或 **≥ 570.26** 对应 CUDA 12 版本。无需安装其他东西 —— CUDA 运行时已打包在内。
 - 矿池连接方式（TLS / 明文）取决于你的 `--pool` 协议前缀（见上面命令行说明）。
 
