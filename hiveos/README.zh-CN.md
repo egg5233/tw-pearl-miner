@@ -1,6 +1,6 @@
 # tw-pearl-miner 在 HiveOS 上
 
-[English](README.en.md) | **简体中文** | [繁體中文](README.zh-TW.md)
+[English](README.md) | **简体中文** | [繁體中文](README.zh-TW.md)
 
 Pearl GPU 矿工的 HiveOS **自定义矿工（Custom Miner）** 安装包。支持任何 Ampere 及更新的
 NVIDIA 显卡（RTX 30/40/50、A100、H100）。

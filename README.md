@@ -1,6 +1,6 @@
 # tw-pearl-miner
 
-**English** | [简体中文](README.md) | [繁體中文](README.zh-TW.md)　·　[Latest release ↗](https://github.com/egg5233/tw-pearl-miner/releases/latest)
+**English** | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md)　·　[Latest release ↗](https://github.com/egg5233/tw-pearl-miner/releases/latest)
 
 **A general-purpose miner since v2.0.0** — no built-in pool; it connects to any Pearl pool you choose (`--pool` is required).
 **Dev fee: 1.5%** (also shown at miner startup).
@@ -32,7 +32,7 @@ bash start.sh          # optional: bash start.sh <worker-name>
 ```
 
 ### HiveOS
-Add a Custom Miner with the installation URL from [`hiveos/README.en.md`](hiveos/README.en.md). The flight sheet needs a **Pool URL (required, scheme prefix supported)** and your **wallet**; Extra config now takes `--` style arguments (the 1.x `CN2=1` / `POOL_TLS=0` env-var style is gone — migration notes in that document). Full instructions there.
+Add a Custom Miner with the installation URL from [`hiveos/README.md`](hiveos/README.md). The flight sheet needs a **Pool URL (required, scheme prefix supported)** and your **wallet**; Extra config now takes `--` style arguments (the 1.x `CN2=1` / `POOL_TLS=0` env-var style is gone — migration notes in that document). Full instructions there.
 
 <details>
 <summary><b>Expected hashrate</b> — RTX 30 / 40 / 50, A100, H100</summary>

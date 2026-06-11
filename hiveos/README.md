@@ -1,6 +1,6 @@
 # tw-pearl-miner on HiveOS
 
-**English** | [简体中文](README.md) | [繁體中文](README.zh-TW.md)
+**English** | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md)
 
 A HiveOS **Custom Miner** package for the Pearl GPU miner. Works on any Ampere-or-newer NVIDIA GPU
 (RTX 30/40/50, A100, H100).

@@ -1,6 +1,6 @@
 # tw-pearl-miner
 
-[English](README.en.md) | **简体中文** | [繁體中文](README.zh-TW.md)　·　[最新版本 ↗](https://github.com/egg5233/tw-pearl-miner/releases/latest)
+[English](README.md) | **简体中文** | [繁體中文](README.zh-TW.md)　·　[最新版本 ↗](https://github.com/egg5233/tw-pearl-miner/releases/latest)
 
 **自 v2.0.0 起为通用矿工** —— 不再内置矿池，连接你自己选择的任意 Pearl 矿池（`--pool` 必填）。
 **开发者费用：1.5%**（矿工启动时亦会显示）。
@@ -32,7 +32,7 @@ bash start.sh          # 可选：bash start.sh <worker名称>
 ```
 
 ### HiveOS
-在 HiveOS 中「添加自定义矿工」（Add Custom Miner），使用 [`hiveos/README.md`](hiveos/README.md) 里的安装 URL；飞行表需填 **Pool URL（必填，可含协议前缀）** 与 **钱包地址**，Extra config 为 `--` 参数写法（1.x 的 `CN2=1` / `POOL_TLS=0` 环境变量写法已废除，迁移说明见该文档）。完整说明见该文档。
+在 HiveOS 中「添加自定义矿工」（Add Custom Miner），使用 [`hiveos/README.zh-CN.md`](hiveos/README.zh-CN.md) 里的安装 URL；飞行表需填 **Pool URL（必填，可含协议前缀）** 与 **钱包地址**，Extra config 为 `--` 参数写法（1.x 的 `CN2=1` / `POOL_TLS=0` 环境变量写法已废除，迁移说明见该文档）。完整说明见该文档。
 
 <details>
 <summary><b>预期算力</b> —— RTX 30 / 40 / 50、A100、H100</summary>
