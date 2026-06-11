@@ -34,7 +34,7 @@ bash start.sh          # optional: bash start.sh <worker-name>
 ### HiveOS
 Add a Custom Miner with the installation URL from [`hiveos/README.md`](hiveos/README.md). The flight sheet needs a **Pool URL (required, scheme prefix supported)** and your **wallet**; Extra config now takes `--` style arguments (the 1.x `CN2=1` / `POOL_TLS=0` env-var style is gone — migration notes in that document). Full instructions there.
 
-<details>
+
 <summary><b>Expected hashrate</b> — RTX 30 / 40 / 50, A100, H100</summary>
 
 Approximate Pearl hashrate per card at **stock clocks** (the miner auto-selects the best shape per GPU). Power-limit / OC tuning can add a few %; **actual figures vary by pool / difficulty**, host and cooling.
@@ -49,7 +49,7 @@ Approximate Pearl hashrate per card at **stock clocks** (the miner auto-selects 
 
 Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to be added. Datacenter figures are for the **SXM** variants — **PCIe** versions run somewhat lower.
 
-</details>
+
 
 <details>
 <summary><b>All options &amp; requirements</b></summary>
