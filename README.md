@@ -42,7 +42,7 @@ Approximate Pearl hashrate per card at **stock clocks** (the miner auto-selects 
 | RTX 50 (Blackwell) | TH/s | RTX 40 / 30 | TH/s | Datacenter | TH/s |
 |---|---|---|---|---|---|
 | RTX 5090 | testing | RTX 4090 | 289 | A100 SXM4 40 GB | 164.8 |
-| RTX 5080 | 198.1 | RTX 4080 | 176.2 | H100 SXM | 134.7 |
+| RTX 5080 | 198.1 | RTX 4080 | 176.2 | H100 SXM | 634.7 |
 | RTX 5070 Ti | 167.7 | RTX 3090 | 108.7 | | |
 | RTX 5070 | 118.4 | | | | |
 | RTX 5060 8G | ~70 | | | | |
