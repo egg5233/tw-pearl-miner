@@ -43,8 +43,8 @@ Approximate Pearl hashrate per card at **stock clocks** (the miner auto-selects 
 |---|---|---|---|---|---|
 | RTX 5090 | 340 | RTX 4090 | 289 | A100 SXM4 40 GB | 164.8 |
 | RTX 5080 | 198.1 | RTX 4080 | 176.2 | H100 SXM | 320.7 |
-| RTX 5070 Ti | 167.7 | RTX 3090 | 108.7 | | |
-| RTX 5070 | 118.4 | | | | |
+| RTX 5070 Ti | 167.7 | RTX 4070S | 122 | | |
+| RTX 5070 | 118.4 | RTX 3090 | 108.7 | | |
 | RTX 5060 8G | ~70 | | | | |
 
 Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to be added. Datacenter figures are for the **SXM** variants — **PCIe** versions run somewhat lower.
