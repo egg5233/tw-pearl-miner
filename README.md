@@ -42,12 +42,14 @@ Approximate Pearl hashrate per card at **stock clocks** (the miner auto-selects 
 | RTX 50 (Blackwell) | TH/s | RTX 40 / 30 | TH/s | Datacenter | TH/s |
 |---|---|---|---|---|---|
 | RTX 5090 | 340 | RTX 4090 | 289 | A100 SXM4 40 GB | 164.8 |
-| RTX 5080 | 198.1 | RTX 4080 | 176.2 | H100 SXM | 320.7 |
-| RTX 5070 Ti | 167.7 | RTX 4070S | 122 | | |
+| RTX 5080 | 198.1 | RTX 4080 | 176.2 | H100 SXM | 568 |
+| RTX 5070 Ti | 167.7 | RTX 4070S | 122.2 | B200 | 994 |
 | RTX 5070 | 118.4 | RTX 3090 | 108.7 | | |
 | RTX 5060 8G | ~70 | | | | |
 
 Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to be added. Datacenter figures are for the **SXM** variants — **PCIe** versions run somewhat lower.
+**RTX 20-series (Turing)** supported since **v2.0.3** — e.g. RTX 2080 Ti ~59 TH/s. (GTX 16-series has no tensor cores and is not supported.)
+
 
 
 
@@ -72,7 +74,7 @@ pearl-gpu-miner --pool <pool> --wallet <prl1...address> [--worker <name>] [--gpu
 The miner auto-picks the best matrix shape for your card, prints a periodic hashrate line, mines until you stop it (Ctrl+C), and **auto-reconnects** through pool restarts / network blips / stalled links.
 
 **Requirements**
-- **NVIDIA GPU, Ampere or newer** (RTX 30 / 40 / 50, A100, H100). Pre-Ampere (GTX 10xx / RTX 20xx) not supported.
+- **NVIDIA GPU, Ampere or newer** (RTX 30 / 40 / 50, A100, H100). RTX 20-series (Turing, tensor-core) supported since v2.0.3; GTX 16xx (no tensor cores) and pre-Turing not supported.
 - **≥ 8 GB VRAM.** 8 GB / 10 GB cards (e.g. 3060 Ti / 3070 / 3080 10G / 4060 Ti 8G / 5060 Ti 8G) **automatically use the low-VRAM mode** since v2.0.1 — no speed penalty; ≥ 12 GB cards are completely unchanged. If VRAM is genuinely insufficient, the miner shows a clear bilingual message and skips the card.
 - **NVIDIA driver ≥ 580.65 (Linux) / ≥ 580.88 (Windows)** for the CUDA 13 build, or **≥ 570.26** for the CUDA 12 build. Nothing else to install — the CUDA runtime ships in the bundle.
 - The pool connection transport (TLS / plaintext) follows your `--pool` scheme prefix (see the command line above).
