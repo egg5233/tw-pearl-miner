@@ -32,6 +32,20 @@
 
 ## 快速开始
 
+**只想挖矿？复制下面，填入你自己的钱包地址，运行即可：**
+
+```bash
+# Linux / HiveOS（在解压后的文件夹内运行）
+./pearl-gpu-miner --pool us.pearl.herominers.com:1200 --wallet YOUR_WALLET.worker
+
+# Windows（在解压后的文件夹内运行）
+pearl-gpu-miner.exe --pool us.pearl.herominers.com:1200 --wallet YOUR_WALLET.worker
+```
+
+把 YOUR_WALLET 换成你的 prl1... 收款地址。".worker" 只是你的矿机名，可改成任意名称。就这样，挖矿程序会自动识别你的显卡并开始挖矿。
+
+---
+
 ### Windows
 1. 下载并解压 `tw-pearl-miner-windows.zip`。
 2. 编辑 `start.bat`，把 `WALLET` 设为你的 `prl1...` 地址、`POOL` 设为你的矿池地址 —— 或者直接运行它，按提示输入。
