@@ -5,6 +5,23 @@
 **自 v2.0.0 起為通用挖礦程式** —— 不再內建礦池，連接你自己選擇的任意 Pearl 礦池（`--pool` 必填）。
 **開發者費用：1.5%**（挖礦程式啟動時亦會顯示）。
 
+
+## 預期算力
+
+每張卡在挖礦程式**自動選擇**形狀下的大致 Pearl 算力（**預設頻率**）。功耗牆 / 超頻可再加幾個百分點；**實際數值依礦池 / 難度而異**，也因主機與散熱不同。
+
+| RTX 50（Blackwell） | TH/s | RTX 40 / 30 | TH/s | 資料中心 | TH/s |
+|---|---|---|---|---|---|
+| RTX 5090 | 340 | RTX 4090 | 289 | A100 SXM4 40 GB | 164.8 |
+| RTX 5080 | 198.1 | RTX 4080 | 176.2 | H100 SXM | 615 |
+| RTX 5070 Ti | 167.7 | RTX 4070S | 122.2 | B200 | 1080 |
+| RTX 5070 | 118.4 | RTX 4060 Ti | 81.2 | | |
+| RTX 5060 Ti | 89.3 | RTX 4060 | 55.2 | | |
+| RTX 5060 | 70.9 | RTX 3090 | 108.7 | | |
+
+未列出的型號同樣支援（Ampere 及更新，顯示記憶體 ≥ 8 GB），數值後續補充。資料中心卡的數值是 **SXM** 版本 —— **PCIe** 版本會略低一些。
+**RTX 20 系（Turing）** 自 **v2.0.3** 起支援 —— 例如 RTX 2080 Ti ~59 TH/s。（GTX 16 系無 Tensor Core，不支援。）
+
 | 系統 | NVIDIA 驅動 | 下載 |
 |---|---|---|
 | **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-windows.zip) |
@@ -34,25 +51,6 @@ bash start.sh          # 選用：bash start.sh <worker名稱>
 ### HiveOS
 在 HiveOS 中「新增自訂礦工」（Add Custom Miner），使用 [`hiveos/README.zh-TW.md`](hiveos/README.zh-TW.md) 裡的安裝 URL；flight sheet 需填 **Pool URL（必填，可含協定前綴）** 與 **錢包位址**，Extra config 為 `--` 參數寫法（1.x 的 `CN2=1` / `POOL_TLS=0` 環境變數寫法已廢除，遷移說明見該文件）。完整說明見該文件。
 
-<details>
-<summary><b>預期算力</b> —— RTX 30 / 40 / 50、A100、H100</summary>
-
-每張卡在挖礦程式**自動選擇**形狀下的大致 Pearl 算力（**預設頻率**）。功耗牆 / 超頻可再加幾個百分點；**實際數值依礦池 / 難度而異**，也因主機與散熱不同。
-
-| RTX 50（Blackwell） | TH/s | RTX 40 / 30 | TH/s | 資料中心 | TH/s |
-|---|---|---|---|---|---|
-| RTX 5090 | 340 | RTX 4090 | 289 | A100 SXM4 40 GB | 164.8 |
-| RTX 5080 | 198.1 | RTX 4080 | 176.2 | H100 SXM | 615 |
-| RTX 5070 Ti | 167.7 | RTX 4070S | 122.2 | B200 | 1080 |
-| RTX 5070 | 118.4 | RTX 4060 Ti | 81.2 | | |
-| RTX 5060 Ti | 89.3 | RTX 4060 | 55.2 | | |
-| RTX 5060 | 70.9 | RTX 3090 | 108.7 | | |
-
-未列出的型號同樣支援（Ampere 及更新，顯示記憶體 ≥ 8 GB），數值後續補充。資料中心卡的數值是 **SXM** 版本 —— **PCIe** 版本會略低一些。
-**RTX 20 系（Turing）** 自 **v2.0.3** 起支援 —— 例如 RTX 2080 Ti ~59 TH/s。（GTX 16 系無 Tensor Core，不支援。）
-
-
-</details>
 
 <details>
 <summary><b>全部選項與系統需求</b></summary>

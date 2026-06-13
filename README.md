@@ -5,6 +5,23 @@
 **A general-purpose miner since v2.0.0** — no built-in pool; it connects to any Pearl pool you choose (`--pool` is required).
 **Dev fee: 1.5%** (also shown at miner startup).
 
+
+## Expected hashrate
+
+Approximate Pearl hashrate per card at **stock clocks** (the miner auto-selects the best shape per GPU). Power-limit / OC tuning can add a few %; **actual figures vary by pool / difficulty**, host and cooling.
+
+| RTX 50 (Blackwell) | TH/s | RTX 40 / 30 | TH/s | Datacenter | TH/s |
+|---|---|---|---|---|---|
+| RTX 5090 | 340 | RTX 4090 | 289 | A100 SXM4 40 GB | 164.8 |
+| RTX 5080 | 198.1 | RTX 4080 | 176.2 | H100 SXM | 615 |
+| RTX 5070 Ti | 167.7 | RTX 4070S | 122.2 | B200 | 1080 |
+| RTX 5070 | 118.4 | RTX 4060 Ti | 81.2 | | |
+| RTX 5060 Ti | 89.3 | RTX 4060 | 55.2 | | |
+| RTX 5060 | 70.9 | RTX 3090 | 108.7 | | |
+
+Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to be added. Datacenter figures are for the **SXM** variants — **PCIe** versions run somewhat lower.
+**RTX 20-series (Turing)** supported since **v2.0.3** — e.g. RTX 2080 Ti ~59 TH/s. (GTX 16-series has no tensor cores and is not supported.)
+
 | System | NVIDIA driver | Download |
 |---|---|---|
 | **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-windows.zip) |
@@ -33,25 +50,6 @@ bash start.sh          # optional: bash start.sh <worker-name>
 
 ### HiveOS
 Add a Custom Miner with the installation URL from [`hiveos/README.md`](hiveos/README.md). The flight sheet needs a **Pool URL (required, scheme prefix supported)** and your **wallet**; Extra config now takes `--` style arguments (the 1.x `CN2=1` / `POOL_TLS=0` env-var style is gone — migration notes in that document). Full instructions there.
-
-
-<summary><b>Expected hashrate</b> — RTX 30 / 40 / 50, A100, H100</summary>
-
-Approximate Pearl hashrate per card at **stock clocks** (the miner auto-selects the best shape per GPU). Power-limit / OC tuning can add a few %; **actual figures vary by pool / difficulty**, host and cooling.
-
-| RTX 50 (Blackwell) | TH/s | RTX 40 / 30 | TH/s | Datacenter | TH/s |
-|---|---|---|---|---|---|
-| RTX 5090 | 340 | RTX 4090 | 289 | A100 SXM4 40 GB | 164.8 |
-| RTX 5080 | 198.1 | RTX 4080 | 176.2 | H100 SXM | 615 |
-| RTX 5070 Ti | 167.7 | RTX 4070S | 122.2 | B200 | 1080 |
-| RTX 5070 | 118.4 | RTX 4060 Ti | 81.2 | | |
-| RTX 5060 Ti | 89.3 | RTX 4060 | 55.2 | | |
-| RTX 5060 | 70.9 | RTX 3090 | 108.7 | | |
-
-Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to be added. Datacenter figures are for the **SXM** variants — **PCIe** versions run somewhat lower.
-**RTX 20-series (Turing)** supported since **v2.0.3** — e.g. RTX 2080 Ti ~59 TH/s. (GTX 16-series has no tensor cores and is not supported.)
-
-
 
 
 <details>

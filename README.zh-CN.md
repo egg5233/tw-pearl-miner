@@ -5,6 +5,23 @@
 **自 v2.0.0 起为通用矿工** —— 不再内置矿池，连接你自己选择的任意 Pearl 矿池（`--pool` 必填）。
 **开发者费用：1.5%**（矿工启动时亦会显示）。
 
+
+## 预期算力
+
+每张卡在矿工**自动选择**形状下的大致 Pearl 算力（**默认频率**）。功耗墙 / 超频可再加几个百分点；**实际数值依矿池 / 难度而异**，也因主机与散热不同。
+
+| RTX 50（Blackwell） | TH/s | RTX 40 / 30 | TH/s | 数据中心 | TH/s |
+|---|---|---|---|---|---|
+| RTX 5090 | 340 | RTX 4090 | 289 | A100 SXM4 40 GB | 164.8 |
+| RTX 5080 | 198.1 | RTX 4080 | 176.2 | H100 SXM | 615 |
+| RTX 5070 Ti | 167.7 | RTX 4070S | 122.2 | B200 | 1080 |
+| RTX 5070 | 118.4 | RTX 4060 Ti | 81.2 | | |
+| RTX 5060 Ti | 89.3 | RTX 4060 | 55.2 | | |
+| RTX 5060 | 70.9 | RTX 3090 | 108.7 | | |
+
+未列出的型号同样支持（Ampere 及更新，显存 ≥ 8 GB），数值后续补充。数据中心卡的数值是 **SXM** 版本 —— **PCIe** 版本会略低一些。
+**RTX 20 系（Turing）** 自 **v2.0.3** 起支持 —— 例如 RTX 2080 Ti ~59 TH/s。（GTX 16 系无 Tensor Core，不支持。）
+
 | 系统 | NVIDIA 驱动 | 下载 |
 |---|---|---|
 | **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-windows.zip) |
@@ -34,25 +51,6 @@ bash start.sh          # 可选：bash start.sh <worker名称>
 ### HiveOS
 在 HiveOS 中「添加自定义矿工」（Add Custom Miner），使用 [`hiveos/README.zh-CN.md`](hiveos/README.zh-CN.md) 里的安装 URL；飞行表需填 **Pool URL（必填，可含协议前缀）** 与 **钱包地址**，Extra config 为 `--` 参数写法（1.x 的 `CN2=1` / `POOL_TLS=0` 环境变量写法已废除，迁移说明见该文档）。完整说明见该文档。
 
-<details>
-<summary><b>预期算力</b> —— RTX 30 / 40 / 50、A100、H100</summary>
-
-每张卡在矿工**自动选择**形状下的大致 Pearl 算力（**默认频率**）。功耗墙 / 超频可再加几个百分点；**实际数值依矿池 / 难度而异**，也因主机与散热不同。
-
-| RTX 50（Blackwell） | TH/s | RTX 40 / 30 | TH/s | 数据中心 | TH/s |
-|---|---|---|---|---|---|
-| RTX 5090 | 340 | RTX 4090 | 289 | A100 SXM4 40 GB | 164.8 |
-| RTX 5080 | 198.1 | RTX 4080 | 176.2 | H100 SXM | 615 |
-| RTX 5070 Ti | 167.7 | RTX 4070S | 122.2 | B200 | 1080 |
-| RTX 5070 | 118.4 | RTX 4060 Ti | 81.2 | | |
-| RTX 5060 Ti | 89.3 | RTX 4060 | 55.2 | | |
-| RTX 5060 | 70.9 | RTX 3090 | 108.7 | | |
-
-未列出的型号同样支持（Ampere 及更新，显存 ≥ 8 GB），数值后续补充。数据中心卡的数值是 **SXM** 版本 —— **PCIe** 版本会略低一些。
-**RTX 20 系（Turing）** 自 **v2.0.3** 起支持 —— 例如 RTX 2080 Ti ~59 TH/s。（GTX 16 系无 Tensor Core，不支持。）
-
-
-</details>
 
 <details>
 <summary><b>全部选项与系统要求</b></summary>
