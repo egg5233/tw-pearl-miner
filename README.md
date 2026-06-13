@@ -32,7 +32,7 @@ Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to
 
 ## Quick start
 
-**Linux / HiveOS** (in the extracted folder):
+**Linux / HiveOS** 
 ```
 ./pearl-gpu-miner --pool us.pearl.herominers.com:1200 --wallet YOUR_WALLET.worker
 ```
