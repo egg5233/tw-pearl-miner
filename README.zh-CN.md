@@ -33,8 +33,6 @@
 
 ## 快速开始
 
-**只想挖矿？填入你的钱包地址，复制对应你系统的那一行，运行即可：**
-
 **Linux / HiveOS**（在解压后的文件夹内）：
 ```
 ./pearl-gpu-miner --pool us.pearl.herominers.com:1200 --wallet YOUR_WALLET.worker
@@ -45,7 +43,7 @@
 pearl-gpu-miner.exe --pool us.pearl.herominers.com:1200 --wallet YOUR_WALLET.worker
 ```
 
-把 YOUR_WALLET 换成你的 prl1... 收款地址；.worker 只是你的矿机名。
+把 YOUR_WALLET 换成你的 prl1... 收款地址；.worker = 矿机名。
 
 ### Windows
 1. 下载并解压 `tw-pearl-miner-windows.zip`。
