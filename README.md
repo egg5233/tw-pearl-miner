@@ -2,13 +2,10 @@
 
 **English** | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md)　·　[Latest release ↗](https://github.com/egg5233/tw-pearl-miner/releases/latest)
 
-**A general-purpose miner since v2.0.0** — no built-in pool; it connects to any Pearl pool you choose (`--pool` is required).
+**A general-purpose miner since v2.0.0**
 **Dev fee: 1.5%** (also shown at miner startup).
 
-
 ## Expected hashrate
-
-Approximate Pearl hashrate per card at **stock clocks** (the miner auto-selects the best shape per GPU). Power-limit / OC tuning can add a few %; **actual figures vary by pool / difficulty**, host and cooling.
 
 | RTX 50 (Blackwell) | TH/s | RTX 40 / 30 | TH/s | Datacenter | TH/s |
 |---|---|---|---|---|---|
@@ -30,12 +27,10 @@ Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to
 |---|---|---|
 | **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-windows.zip) |
 | **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-linux.tar.gz) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.0.3.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-2.0.3.tar.gz) |
 | **Linux** — older driver | 570.26–580 | [tw-pearl-miner-2.0.3-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-2.0.3-cuda12.tar.gz) |
 | **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-2.0.3.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-2.0.3.c12.tar.gz) |
 
 ## Quick start
-
 
 **Linux / HiveOS** (in the extracted folder):
 ```
