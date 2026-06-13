@@ -49,11 +49,13 @@ Replace YOUR_WALLET with your prl1... payout address; the .worker part is just y
 2. Edit `start.bat`: set `WALLET` (your `prl1...` address) and `POOL` (your mining pool) — or just run it and type them when asked.
 3. Double-click `start.bat`.
 
-```bash
+```b
 # one-line install — downloads and extracts
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
+```
 
 # ...or manually:
+```
 wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # set WALLET=your prl1... address, POOL=your mining pool
