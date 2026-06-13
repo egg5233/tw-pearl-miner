@@ -49,21 +49,14 @@ Replace YOUR_WALLET with your prl1... payout address; the .worker part is just y
 2. Edit `start.bat`: set `WALLET` (your `prl1...` address) and `POOL` (your mining pool) — or just run it and type them when asked.
 3. Double-click `start.bat`.
 
-```b
-# one-line install — downloads and extracts
+###Linux
+```
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 ```
 
-# ...or manually:
-```
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-linux.tar.gz
-tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
-nano start.sh          # set WALLET=your prl1... address, POOL=your mining pool
-bash start.sh          # optional: bash start.sh <worker-name>
-```
 
 ### HiveOS
-Add a Custom Miner with the installation URL from [`hiveos/README.md`](hiveos/README.md). The flight sheet needs a **Pool URL (required, scheme prefix supported)** and your **wallet**; Extra config now takes `--` style arguments (the 1.x `CN2=1` / `POOL_TLS=0` env-var style is gone — migration notes in that document). Full instructions there.
+Add a Custom Miner with the installation URL from [`hiveos/README.md`](hiveos/README.md). The flight sheet needs a **Pool URL (required, scheme prefix supported)** and your **wallet**; Extra config now takes `--` style arguments . Full instructions there.
 
 
 <details>
