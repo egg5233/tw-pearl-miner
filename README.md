@@ -36,19 +36,19 @@ Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to
 
 ## Quick start
 
-**Just want to mine? Copy this, put in your own wallet, run it:**
+**Just want to mine? Put your wallet in, copy the line for your OS, and run it:**
 
-```bash
-# Linux / HiveOS (run inside the extracted folder)
+**Linux / HiveOS** (in the extracted folder):
+```
 ./pearl-gpu-miner --pool us.pearl.herominers.com:1200 --wallet YOUR_WALLET.worker
+```
 
-# Windows (run inside the extracted folder)
+**Windows** (in the extracted folder):
+```
 pearl-gpu-miner.exe --pool us.pearl.herominers.com:1200 --wallet YOUR_WALLET.worker
 ```
 
-Replace YOUR_WALLET with your prl1... payout address. The ".worker" part is just your rig name, change it to anything. That is all, the miner auto-detects your GPU and starts mining.
-
----
+Replace YOUR_WALLET with your prl1... payout address; the .worker part is just your rig name.
 
 ### Windows
 1. Download and extract `tw-pearl-miner-windows.zip`.
