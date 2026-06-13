@@ -36,7 +36,6 @@ Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to
 
 ## Quick start
 
-**Just want to mine? Put your wallet in, copy the line for your OS, and run it:**
 
 **Linux / HiveOS** (in the extracted folder):
 ```
