@@ -1,6 +1,6 @@
 # tw-pearl-miner
 
-**English** | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md)　·　[Latest release ↗](https://github.com/egg5233/tw-pearl-miner/releases/latest)
+**English** | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md)　·　[Latest release ↗](https://github.com/egg5233/tw-pearl-miner/releases/latest)　·　[💬 Discord](https://discord.gg/J6NHCrwmx2)
 
 **A general-purpose miner since v2.0.0**
 **Dev fee: 1.5%** (also shown at miner startup).

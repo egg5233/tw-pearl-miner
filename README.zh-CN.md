@@ -1,6 +1,6 @@
 # tw-pearl-miner
 
-[English](README.md) | **简体中文** | [繁體中文](README.zh-TW.md)　·　[最新版本 ↗](https://github.com/egg5233/tw-pearl-miner/releases/latest)
+[English](README.md) | **简体中文** | [繁體中文](README.zh-TW.md)　·　[最新版本 ↗](https://github.com/egg5233/tw-pearl-miner/releases/latest)　·　[💬 Discord 社区](https://discord.gg/J6NHCrwmx2)
 
 **自 v2.0.0 起为通用矿工** —— 不再内置矿池，连接你自己选择的任意 Pearl 矿池（`--pool` 必填）。
 **开发者费用：1.5%**（矿工启动时亦会显示）。
