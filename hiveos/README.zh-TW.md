@@ -9,6 +9,45 @@ NVIDIA 顯示卡（RTX 30/40/50、A100、H100）。
 > **Extra config arguments** 現在是礦工的 **命令列參數**（如 `--gpus 0,1`），不再是環境變數。
 > 詳見下方 *從 1.x 升級*。
 
+## 快速開始 —— 匯入飛行表（JSON）
+
+不想手動設定？先新增一個 **PRL 錢包**（Wallets → 填入你的 `prl1...` 位址），再把下面的飛行表 JSON
+匯入 HiveOS（**飛行表 Flight Sheets** → 匯入 / 貼上）。它已經配好了自訂礦工、安裝 URL、演算法與礦池 ——
+你只需確認錢包，並視需要修改礦池即可。
+
+```json
+{
+    "isFavorite": false,
+    "items": [
+        {
+            "coin": "PRL",
+            "dpool_ssl": false,
+            "miner": "custom",
+            "miner_alt": "tw-pearl-miner",
+            "miner_config": {
+                "algo": "pearlhash",
+                "install_url": "https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-2.0.3.tar.gz",
+                "miner": "tw-pearl-miner",
+                "pass": "x",
+                "template": "%WAL%.%WORKER_NAME%",
+                "url": "hk.pearl.herominers.com:1200"
+            },
+            "pool_geo": [],
+            "pool_ssl": false,
+            "wal_id": 0
+        }
+    ]
+}
+```
+
+- **`wal_id`** 指向你的 HiveOS 錢包（`0` = 你的第一個 PRL 錢包）；`%WAL%` 展開為該收款位址，
+  `%WORKER_NAME%` 展開為礦機名。
+- **`url`** 是礦池 —— 範例用的是 herominers 香港（`hk.pearl.herominers.com:1200`）。請改成你自己的礦池；
+  若要用 TLS 或其它傳輸方式，依下方 *Pool URL* 說明加上 scheme。
+- **`install_url`** 鎖定在 **v2.0.3** —— 有新版本時改成最新的 release 標籤。
+
+想手動設定？依下面的步驟操作即可。
+
 ## 安裝
 
 1. 在 HiveOS 中開啟你的礦機 → **飛行表（Flight Sheets）** → 新建一個飛行表（或先到 **錢包 Wallets**）。

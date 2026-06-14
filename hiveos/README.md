@@ -9,6 +9,46 @@ A HiveOS **Custom Miner** package for the Pearl GPU miner. Works on any Ampere-o
 > (required), and **Extra config arguments** are now miner **CLI flags** (e.g. `--gpus 0,1`), not
 > environment variables. See *Migrating from 1.x* below.
 
+## Quick start — import a Flight Sheet (JSON)
+
+Want to skip the manual setup? Add a **PRL wallet** first (Wallets → add your `prl1...` address), then
+import the Flight Sheet JSON below (HiveOS → **Flight Sheets** → import / paste). It already wires up
+the custom miner, install URL, algo and a pool — you only confirm the wallet and, optionally, change
+the pool.
+
+```json
+{
+    "isFavorite": false,
+    "items": [
+        {
+            "coin": "PRL",
+            "dpool_ssl": false,
+            "miner": "custom",
+            "miner_alt": "tw-pearl-miner",
+            "miner_config": {
+                "algo": "pearlhash",
+                "install_url": "https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-2.0.3.tar.gz",
+                "miner": "tw-pearl-miner",
+                "pass": "x",
+                "template": "%WAL%.%WORKER_NAME%",
+                "url": "hk.pearl.herominers.com:1200"
+            },
+            "pool_geo": [],
+            "pool_ssl": false,
+            "wal_id": 0
+        }
+    ]
+}
+```
+
+- **`wal_id`** references your HiveOS wallet (`0` = your first PRL wallet); `%WAL%` expands to that
+  payout address and `%WORKER_NAME%` to the rig name.
+- **`url`** is the pool — the example uses herominers HK (`hk.pearl.herominers.com:1200`). Change it to
+  your own pool; for TLS or another transport add a scheme as described in *Pool URL* below.
+- **`install_url`** pins **v2.0.3** — bump it to the latest release tag when a newer version ships.
+
+Prefer to set it up by hand? Follow the steps below.
+
 ## Install
 
 1. In HiveOS, open your worker → **Flight Sheets** → create a new flight sheet (or **Wallets** first).
