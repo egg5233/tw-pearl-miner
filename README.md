@@ -13,9 +13,9 @@
 | RTX 5080 | 212 | RTX 4080 | 176.2 | RTX 3080 Ti | 121 | H100 SXM | 615 |
 | RTX 5070 Ti | 169 | RTX 4070 Ti | 138.7 | RTX 3080 | 100.5 | B200 | 1080 |
 | RTX 5070 | 118.4 | RTX 4070S | 122.2 | RTX 3070 Ti | 76.4 |  |  |
-| RTX 5060 Ti | 89.3 | RTX 4070 | 102.5 | RTX 3070 | 72.4 |  |  |
-| RTX 5060 | 70.9 | RTX 4060 Ti | 81.2 | RTX 3060 Ti | 54.3 |  |  |
-|  |  | RTX 4060 | 55.2 |  |  |  |  |
+| RTX 5060 Ti 16GB | 89.3 | RTX 4070 | 102.5 | RTX 3070 | 72.4 |  |  |
+| RTX 5060 Ti 8GB | 81.0 | RTX 4060 Ti | 81.2 | RTX 3060 Ti | 54.3 |  |  |
+| RTX 5060 | 70.9 | RTX 4060 | 55.2 |  |  |  |  |
 
 Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to be added. Datacenter figures are for the **SXM** variants — **PCIe** versions run somewhat lower.
 **RTX 20-series (Turing)** supported since **v2.0.3** — e.g. RTX 2080 Ti ~59 TH/s. (GTX 16-series has no tensor cores and is not supported.)
