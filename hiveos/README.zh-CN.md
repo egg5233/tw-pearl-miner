@@ -26,7 +26,7 @@ NVIDIA 显卡（RTX 30/40/50、A100、H100）。
             "miner_alt": "tw-pearl-miner",
             "miner_config": {
                 "algo": "pearlhash",
-                "install_url": "https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-2.0.3.tar.gz",
+                "install_url": "https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.4/tw-pearl-miner-2.0.4.tar.gz",
                 "miner": "tw-pearl-miner",
                 "pass": "x",
                 "template": "%WAL%.%WORKER_NAME%",
@@ -44,7 +44,7 @@ NVIDIA 显卡（RTX 30/40/50、A100、H100）。
   `%WORKER_NAME%` 展开为矿机名。
 - **`url`** 是矿池 —— 示例用的是 herominers 香港（`hk.pearl.herominers.com:1200`）。请改成你自己的矿池；
   若要用 TLS 或其它传输方式，按下方 *Pool URL* 说明加上 scheme。
-- **`install_url`** 锁定在 **v2.0.3** —— 有新版本时改成最新的 release 标签。
+- **`install_url`** 锁定在 **v2.0.4** —— 有新版本时改成最新的 release 标签。
 
 想手动配置？按下面的步骤操作即可。
 
@@ -55,9 +55,9 @@ NVIDIA 显卡（RTX 30/40/50、A100、H100）。
    - **矿工名称（Miner name）：** `tw-pearl-miner`
    - **安装 URL（Installation URL）：**
      ```
-     https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-2.0.3.tar.gz
+     https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.4/tw-pearl-miner-2.0.4.tar.gz
      ```
-     （也可用 `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-2.0.3.tar.gz`）
+     （也可用 `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-2.0.4.tar.gz`）
    - **哈希算法（Hash algorithm）：** `pearl`（自由文本 —— 仅供参考）
 3. 填写飞行表字段：
    | 字段 | 值 |
@@ -125,6 +125,6 @@ tw-pearl-miner/
 - **卡在 570–580 驱动（上不了 CUDA 13）？** 改用 **CUDA-12.8** 版安装包 —— 速度相同，可在驱动
   ≥ 570.26 上运行（内置 `libcudart.so.12`）：
   ```
-  https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-2.0.3.c12.tar.gz
+  https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.4/tw-pearl-miner-2.0.4.c12.tar.gz
   ```
 - **算力单位：** 矿工的指标是 TH/s；HiveOS 按比例显示（`total khs` 字段 = `TH/s × 1e9`）。

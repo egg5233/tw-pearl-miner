@@ -27,7 +27,7 @@ the pool.
             "miner_alt": "tw-pearl-miner",
             "miner_config": {
                 "algo": "pearlhash",
-                "install_url": "https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-2.0.3.tar.gz",
+                "install_url": "https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.4/tw-pearl-miner-2.0.4.tar.gz",
                 "miner": "tw-pearl-miner",
                 "pass": "x",
                 "template": "%WAL%.%WORKER_NAME%",
@@ -45,7 +45,7 @@ the pool.
   payout address and `%WORKER_NAME%` to the rig name.
 - **`url`** is the pool — the example uses herominers HK (`hk.pearl.herominers.com:1200`). Change it to
   your own pool; for TLS or another transport add a scheme as described in *Pool URL* below.
-- **`install_url`** pins **v2.0.3** — bump it to the latest release tag when a newer version ships.
+- **`install_url`** pins **v2.0.4** — bump it to the latest release tag when a newer version ships.
 
 Prefer to set it up by hand? Follow the steps below.
 
@@ -56,9 +56,9 @@ Prefer to set it up by hand? Follow the steps below.
    - **Miner name:** `tw-pearl-miner`
    - **Installation URL:**
      ```
-     https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-2.0.3.tar.gz
+     https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.4/tw-pearl-miner-2.0.4.tar.gz
      ```
-     (or `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-2.0.3.tar.gz`)
+     (or `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-2.0.4.tar.gz`)
    - **Hash algorithm:** `pearl` (free text — informational only)
 3. Fill the flight-sheet fields:
    | Field | Value |
@@ -132,6 +132,6 @@ tw-pearl-miner/
 - **Stuck on a 570–580 driver (no CUDA 13)?** Use the **CUDA-12.8** package instead — same speed, runs
   on driver ≥ 570.26 (bundles `libcudart.so.12`):
   ```
-  https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.3/tw-pearl-miner-2.0.3.c12.tar.gz
+  https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.4/tw-pearl-miner-2.0.4.c12.tar.gz
   ```
 - **Hashrate units:** the miner reports TH/s; HiveOS scales it (`total khs` = `TH/s × 1e9`).
