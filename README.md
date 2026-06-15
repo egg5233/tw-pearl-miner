@@ -5,11 +5,11 @@
 **A general-purpose miner since v2.0.0**
 **Dev fee: 1.5%** (also shown at miner startup).
 
-## Expected hashrate (*pool-effective)
+## Expected hashrate (*pool-effective *default oc/pl *tested on random vast gpu) 
 
 | RTX 50 | TH/s | RTX 40 | TH/s | RTX 30 | TH/s | Datacenter | TH/s |
 |---|---|---|---|---|---|---|---|
-| RTX 5090 | 345 | RTX 4090 | 289 | RTX 3090 | 125 | A100 SXM4 40 GB | 164.8 |
+| RTX 5090 | 360 | RTX 4090 | 289 | RTX 3090 | 125 | A100 SXM4 40 GB | 164.8 |
 | RTX 5080 | 210 | RTX 4080 | 176.2 | RTX 3080 Ti | 121 | H100 SXM | 615 |
 | RTX 5070 Ti | 167.7 | RTX 4070 Ti | 138.7 | RTX 3080 | 100.5 | B200 | 1080 |
 | RTX 5070 | 118.4 | RTX 4070S | 122.2 | RTX 3070 Ti | 76.4 |  |  |
