@@ -12,10 +12,11 @@
 |---|---|---|---|---|---|---|---|
 | RTX 5090 | 345 | RTX 4090 | 289 | RTX 3090 | 125 | A100 SXM4 40 GB | 164.8 |
 | RTX 5080 | 210 | RTX 4080 | 176.2 | RTX 3080 Ti | 121 | H100 SXM | 615 |
-| RTX 5070 Ti | 167.7 | RTX 4070 Ti | 138.7 | RTX 3080 | 100.5 | B200 | 1080 |
-| RTX 5070 | 118.4 | RTX 4070S | 122.2 | RTX 3070 Ti | 76.4 |  |  |
-| RTX 5060 Ti | 89.3 | RTX 4070 | 102.5 | RTX 3070 | 72.4 |  |  |
-| RTX 5060 | 70.9 | RTX 4060 Ti | 81.2 | RTX 3060 Ti | 54.3 |  |  |
+| RTX 5070 Ti | 167.7 | RTX 4070 Ti SUPER | 155.8 | RTX 3080 | 100.5 | B200 | 1080 |
+| RTX 5070 | 118.4 | RTX 4070 Ti | 142.7 | RTX 3070 Ti | 76.4 |  |  |
+| RTX 5060 Ti | 89.3 | RTX 4070S | 122.2 | RTX 3070 | 72.4 |  |  |
+| RTX 5060 | 70.9 | RTX 4070 | 107.5 | RTX 3060 Ti | 54.3 |  |  |
+|  |  | RTX 4060 Ti | 81.2 |  |  |  |  |
 |  |  | RTX 4060 | 55.2 |  |  |  |  |
 
 未列出的型号同样支持（Ampere 及更新，显存 ≥ 8 GB），
@@ -23,11 +24,11 @@
 
 | 系统 | NVIDIA 驱动 | 下载 |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.5/tw-pearl-miner-windows.zip) |
-| **Linux**（桌面 / 服务器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.5/tw-pearl-miner-linux.tar.gz) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.0.5.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.5/tw-pearl-miner-2.0.5.tar.gz) |
-| **Linux** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-2.0.5-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.5/tw-pearl-miner-2.0.5-cuda12.tar.gz) |
-| **HiveOS** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-2.0.5.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.5/tw-pearl-miner-2.0.5.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.6/tw-pearl-miner-windows.zip) |
+| **Linux**（桌面 / 服务器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.6/tw-pearl-miner-linux.tar.gz) |
+| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.0.6.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.6/tw-pearl-miner-2.0.6.tar.gz) |
+| **Linux** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-2.0.6-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.6/tw-pearl-miner-2.0.6-cuda12.tar.gz) |
+| **HiveOS** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-2.0.6.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.6/tw-pearl-miner-2.0.6.c12.tar.gz) |
 
 ## 快速开始
 
@@ -53,7 +54,7 @@ pearl-gpu-miner.exe --pool us.pearl.herominers.com:1200 --wallet YOUR_WALLET.wor
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 
 # ……或手动：
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.5/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.6/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # 设置 WALLET=你的 prl1... 地址、POOL=你的矿池地址
 bash start.sh          # 可选：bash start.sh <worker名称>
