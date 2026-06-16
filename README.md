@@ -9,7 +9,7 @@
 
 | RTX 50 | TH/s | RTX 40 | TH/s | RTX 30 | TH/s | Datacenter | TH/s |
 |---|---|---|---|---|---|---|---|
-| RTX 5090 | 355 | RTX 4090 | 289 | RTX 3090 | 125 | A100 SXM4 40 GB | 164.8 |
+| RTX 5090 | 358 | RTX 4090 | 289 | RTX 3090 | 125 | A100 SXM4 40 GB | 164.8 |
 | RTX 5080 | 212 | RTX 4080 | 176.2 | RTX 3080 Ti | 121 | H100 SXM | 615 |
 | RTX 5070 Ti | 169 | RTX 4070 Ti SUPER | 155.8 | RTX 3080 | 100.5 | B200 | 1080 |
 | RTX 5070 | 118.4 | RTX 4070 Ti | 142.7 | RTX 3070 Ti | 76.4 |  |  |
@@ -23,10 +23,10 @@ Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to
 
 | System | NVIDIA driver | Download |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.6/tw-pearl-miner-windows.zip) |
-| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.6/tw-pearl-miner-linux.tar.gz) |
-| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-2.0.6-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.6/tw-pearl-miner-2.0.6-cuda12.tar.gz) |
-| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-2.0.6.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.6/tw-pearl-miner-2.0.6.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.7/tw-pearl-miner-windows.zip) |
+| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.7/tw-pearl-miner-linux.tar.gz) |
+| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-2.0.7-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.7/tw-pearl-miner-2.0.7-cuda12.tar.gz) |
+| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-2.0.7.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.7/tw-pearl-miner-2.0.7.c12.tar.gz) |
 
 ## Quick start
 
