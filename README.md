@@ -23,10 +23,10 @@ Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to
 
 | System | NVIDIA driver | Download |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.7/tw-pearl-miner-windows.zip) |
-| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.7/tw-pearl-miner-linux.tar.gz) |
-| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-2.0.7-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.7/tw-pearl-miner-2.0.7-cuda12.tar.gz) |
-| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-2.0.7.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.7/tw-pearl-miner-2.0.7.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.8/tw-pearl-miner-windows.zip) |
+| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.8/tw-pearl-miner-linux.tar.gz) |
+| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-2.0.8-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.8/tw-pearl-miner-2.0.8-cuda12.tar.gz) |
+| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-2.0.8.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.8/tw-pearl-miner-2.0.8.c12.tar.gz) |
 
 ## Quick start
 
@@ -74,6 +74,8 @@ pearl-gpu-miner --pool <pool> --wallet <prl1...address> [--worker <name>] [--gpu
 - `--gpus` (default: all): comma-separated device ids, e.g. `0,1,2,3`.
 - `--low-vram` (v2.0.2): force the low-VRAM mode on every GPU (frees ~8 GB with no speed change; 8–10 GB cards already enable it automatically). Useful on shared-GPU rigs.
 - `--no-tui` (v2.0.2): use the classic single-line output. A full-screen UI (live per-card hashrate, temps, shares and a log panel) is enabled automatically in an interactive terminal; redirected / scripted / HiveOS environments fall back to line mode automatically.
+- `--password <string>` (v2.0.8): stratum password. On **AlphaPool** (`*.alphapool.tech`) this pins static share difficulty via the password field, e.g. `--password 'x;d=65536'`. Other Pearl dialects ignore it.
+- `--diff <N>` (v2.0.8): convenience for `--password 'x;d=N'` — pin **AlphaPool** static difficulty to `N` (pool minimum **20000**; `--diff 0` or any non-numeric value is rejected). Recommended on fast cards so the share rate doesn't outrun submission, e.g. a 5090 → `--diff 131072`.
 
 The miner auto-picks the best matrix shape for your card, prints a periodic hashrate line, mines until you stop it (Ctrl+C), and **auto-reconnects** through pool restarts / network blips / stalled links.
 
