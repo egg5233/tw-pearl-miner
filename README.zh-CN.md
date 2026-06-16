@@ -24,11 +24,11 @@
 
 | 系统 | NVIDIA 驱动 | 下载 |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.8/tw-pearl-miner-windows.zip) |
-| **Linux**（桌面 / 服务器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.8/tw-pearl-miner-linux.tar.gz) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.0.8.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.8/tw-pearl-miner-2.0.8.tar.gz) |
-| **Linux** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-2.0.8-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.8/tw-pearl-miner-2.0.8-cuda12.tar.gz) |
-| **HiveOS** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-2.0.8.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.8/tw-pearl-miner-2.0.8.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.9/tw-pearl-miner-windows.zip) |
+| **Linux**（桌面 / 服务器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.9/tw-pearl-miner-linux.tar.gz) |
+| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.0.9.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.9/tw-pearl-miner-2.0.9.tar.gz) |
+| **Linux** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-2.0.9-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.9/tw-pearl-miner-2.0.9-cuda12.tar.gz) |
+| **HiveOS** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-2.0.9.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.9/tw-pearl-miner-2.0.9.c12.tar.gz) |
 
 ## 快速开始
 
@@ -54,7 +54,7 @@ pearl-gpu-miner.exe --pool us.pearl.herominers.com:1200 --wallet YOUR_WALLET.wor
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 
 # ……或手动：
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.8/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.0.9/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # 设置 WALLET=你的 prl1... 地址、POOL=你的矿池地址
 bash start.sh          # 可选：bash start.sh <worker名称>
@@ -83,6 +83,7 @@ pearl-gpu-miner --pool <矿池地址> --wallet <prl1...地址> [--worker <名称
 - `--no-tui`（v2.0.2）：使用经典单行输出。默认在交互终端中自动启用全屏界面（实时显示各卡算力、温度、份额与日志）；重定向 / 脚本 / HiveOS 环境自动回退单行模式。
 - `--password <字符串>`（v2.0.8）：stratum 密码。在 **AlphaPool**（`*.alphapool.tech`）上通过密码字段锁定静态份额难度，例如 `--password 'x;d=65536'`；其他 Pearl 方言会忽略此参数。
 - `--diff <N>`（v2.0.8）：`--password 'x;d=N'` 的便捷写法 —— 将 **AlphaPool** 静态难度锁定为 `N`（矿池最低 **20000**；`--diff 0` 或非数字会被拒绝）。建议高算力显卡使用，避免份额提交频率超过提交速度，例如 5090 → `--diff 131072`。
+- `--pf`（v2.0.9）：将矿池标记为 **PearlFortune**。直连 PearlFortune 时会依主机名自动识别（例如 `--pool jp.pearlfortune.org:8888`）；仅当通过本地转发器连接（地址不是 pearlfortune 主机）时才需加上 `--pf`。
 
 矿工会自动为你的显卡选择最佳矩阵形状，定期打印一行算力，持续挖矿直到你停止（Ctrl+C），并在矿池重启 / 网络抖动 / 连接卡死时**自动重连**。
 
