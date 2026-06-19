@@ -6,6 +6,14 @@
 **开发者费用：1.5%**（矿工启动时亦会显示）。
 
 
+## 支持的矿池
+
+- [PearlFortune](https://pearlfortune.org)
+- [HeroMiners](https://pearl.herominers.com)
+- [AlphaPool](https://alphapool.tech)
+- [Kryptex](https://pool.kryptex.com/prl)
+- [LuckyPool](https://pearl.luckypool.io/)
+
 ## 预期算力 (pool-effective*)
 
 | RTX 50 | TH/s | RTX 40 | TH/s | RTX 30 | TH/s | 数据中心 | TH/s |

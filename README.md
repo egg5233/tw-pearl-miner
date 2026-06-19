@@ -5,6 +5,14 @@
 **A general-purpose miner since v2.0.0**
 **Dev fee: 1.5%** (also shown at miner startup).
 
+## Supported pools
+
+- [PearlFortune](https://pearlfortune.org)
+- [HeroMiners](https://pearl.herominers.com)
+- [AlphaPool](https://alphapool.tech)
+- [Kryptex](https://pool.kryptex.com/prl)
+- [LuckyPool](https://pearl.luckypool.io/)
+
 ## Expected hashrate (*pool-effective *default oc/pl *tested on random vast gpu) 
 
 | RTX 50 | TH/s | RTX 40 | TH/s | RTX 30 | TH/s | Datacenter | TH/s |
