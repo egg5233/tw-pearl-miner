@@ -2,9 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md) | **繁體中文**　·　[最新版本 ↗](https://github.com/egg5233/tw-pearl-miner/releases/latest)　·　[💬 Discord 社群](https://discord.gg/J6NHCrwmx2)
 
-**自 v2.0.0 起為通用挖礦程式** —— 不再內建礦池，連接你自己選擇的任意 Pearl 礦池（`--pool` 必填）。
 **開發者費用：1.5%**（挖礦程式啟動時亦會顯示）。
-
 
 ## 支援的礦池
 
