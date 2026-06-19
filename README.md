@@ -14,11 +14,11 @@
 
 ## Expected hashrate (*pool-effective *default oc/pl *tested on random vast gpu) 
 
-| RTX 50 | TH/s | RTX 40 | TH/s | RTX 30 | TH/s | Datacenter | TH/s |
+| RTX 50 | TH/s | RTX 40 | TH/s | RTX 30 | TH/s | DC | TH/s |
 |---|---|---|---|---|---|---|---|
-| RTX 5090 | 360.5 | RTX 4090 | 291 | RTX 3090 | 125.9 | A100 | 164.8 |
-| RTX 5080 | 213.5 | RTX 4080 | 177.4 | RTX 3080 Ti | 121.8 | H100 | 615 |
-| RTX 5070 Ti | 170.2 | 4070TS | 156.9 | RTX 3080 | 101.2 | B200 | 1162 |
+| RTX 5090 | 360.5@575w | RTX 4090 | 291@450w | RTX 3090 | 125.9@420w | A100 | 164.8@400w |
+| RTX 5080 | 213.5@360w | RTX 4080 | 177.4@320w | RTX 3080 Ti | 121.8@350w | H100 | 615@696w |
+| RTX 5070 Ti | 170.2@300w | 4070TS | 156.9@285w | RTX 3080 | 101.2@320w | B200 | 1162@1000w |
 | RTX 5070 | 119.2 | RTX 4070 Ti | 143.7 | RTX 3070 Ti | 76.9 |  |  |
 | RTX 5060 Ti 16GB | 89.9 | RTX 4070S | 123.1 | RTX 3070 | 72.9 |  |  |
 | RTX 5060 Ti 8GB | 81.6 | RTX 4070 | 108.3 | RTX 3060 Ti | 54.7 |  |  |
