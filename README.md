@@ -6,7 +6,7 @@
 
 ## Supported pools
 
-- [PearlFortune](https://pearlfortune.org)    Use: global.pearlfortune.org:8888 when mining
+- [PearlFortune](https://pearlfortune.org) *****Use: global.pearlfortune.org:8888 when mining*****
 - [HeroMiners](https://pearl.herominers.com)
 - [AlphaPool](https://alphapool.tech)
 - [Kryptex](https://pool.kryptex.com/prl)
@@ -17,7 +17,7 @@
 | 50 | TH/s | 40 | TH/s | 30 | TH/s | DC | TH/s |
 |---|---|---|---|---|---|---|---|
 | 5090 | 360@600w | 4090 | 295.5@450w | 3090 | 108.6@347w | A100 | 206.1@398w |
-| 5090 | 330@505w | 4080 | 183@320w | 3080 Ti | 112.6@349w | H100 | 622.7@697w |
+| 5090 | 330@505w | 4080 | 183@320w | 3080Ti | 112.6@349w | H100 | 622.7@697w |
 | 5080 | 211.1@339w | 4070TS | 157.8@285w | 3080 | 98.5@319w | B200 | 1162@1000w |
 | 5070Ti | 172.1@300w | 4070Ti | 150.1@285w | 3070Ti | 78.4@310w | PRO6000 | 345@600w |
 | 5070 | 119.6@250w | 4070S | 126.7@220w | 3070 | 70.4@215w |  |  |
