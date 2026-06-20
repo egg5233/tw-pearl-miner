@@ -14,16 +14,16 @@
 
 ## Expected hashrate (*pool-effective *default oc/pl *tested on random vast gpu) 
 
-| RTX 50 | TH/s | RTX 40 | TH/s | RTX 30 | TH/s | DC | TH/s |
+| 50 | TH/s | 40 | TH/s | 30 | TH/s | DC | TH/s |
 |---|---|---|---|---|---|---|---|
-| RTX 5090 | 360.5@575w | RTX 4090 | 291@450w | RTX 3090 | 125.9@420w | A100 | 164.8@400w |
-| RTX 5080 | 213.5@360w | RTX 4080 | 177.4@320w | RTX 3080 Ti | 121.8@350w | H100 | 615@696w |
-| RTX 5070 Ti | 170.2@300w | 4070TS | 156.9@285w | RTX 3080 | 101.2@320w | B200 | 1162@1000w |
-| RTX 5070 | 119.2 | RTX 4070 Ti | 143.7 | RTX 3070 Ti | 76.9 |  |  |
-| RTX 5060 Ti 16GB | 89.9 | RTX 4070S | 123.1 | RTX 3070 | 72.9 |  |  |
-| RTX 5060 Ti 8GB | 81.6 | RTX 4070 | 108.3 | RTX 3060 Ti | 54.7 |  |  |
-| RTX 5060 | 71.4 | RTX 4060 Ti | 81.8 |  |  |  |  |
-|  |  | RTX 4060 | 55.2 |  |  |  |  |
+| 5090 | 360.5@575w | 4090 | 291@450w | 3090 | 125.9@420w | A100 | 164.8@400w |
+| 5080 | 213.5@360w | 4080 | 177.4@320w | 3080 Ti | 121.8@350w | H100 | 615@696w |
+| 5070 Ti | 170.2@300w | 4070TS | 156.9@285w | 3080 | 101.2@320w | B200 | 1162@1000w |
+| 5070 | 119.2 | 4070 Ti | 143.7 | 3070 Ti | 76.9 |  |  |
+| 5060 Ti 16GB | 89.9 | 4070S | 123.1 | 3070 | 72.9 |  |  |
+| 5060 Ti 8GB | 81.6 | 4070 | 108.3 | 3060 Ti | 54.7 |  |  |
+| 5060 | 71.4 | 4060 Ti | 81.8 |  |  |  |  |
+|  |  | 4060 | 55.2 |  |  |  |  |
 
 Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to be added. Datacenter figures are for the **SXM** variants — **PCIe** versions run somewhat lower.
 **RTX 20-series (Turing)** supported since **v2.0.3** — e.g. RTX 2080 Ti ~59 TH/s. (GTX 16-series has no tensor cores and is not supported.)
