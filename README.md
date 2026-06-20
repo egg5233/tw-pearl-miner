@@ -20,11 +20,11 @@
 | 5090 | 330@505w |  |  |  |  |  |  |
 | 5080 | 211.1@339w | 4080 | 183@320w | 3080 Ti | 112.6@349w | H100 | 622.7@697w |
 | 5070 Ti | 172.1@300w | 4070TS | 157.8@285w | 3080 | 98.5@319w | B200 | 1162@1000w |
-| 5070 | 119.2 | 4070 Ti | 143.7 | 3070 Ti | 76.9 |  |  |
-| 5060 Ti 16GB | 89.9 | 4070S | 123.1 | 3070 | 72.9 |  |  |
-| 5060 Ti 8GB | 81.6 | 4070 | 108.3 | 3060 Ti | 54.7 |  |  |
-| 5060 | 71.4 | 4060 Ti | 81.8 |  |  |  |  |
-|  |  | 4060 | 55.2 |  |  |  |  |
+| 5070 | 119.6@250w | 4070 Ti | 150.1@285w | 3070 Ti | 78.4@310w |  |  |
+| 5060 Ti 16GB | 89.5@180w | 4070S | 126.7@220w | 3070 | 70.4@215w |  |  |
+| 5060 Ti 8GB | 81.6 | 4070 | 112.6@200w | 3060 Ti | 56.3@200w |  |  |
+| 5060 | 73.9@145w | 4060 Ti | 78.2@165w |  |  |  |  |
+|  |  | 4060 | 54.3@115w |  |  |  |  |
 
 Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to be added. Datacenter figures are for the **SXM** variants — **PCIe** versions run somewhat lower.
 **RTX 20-series (Turing)** supported since **v2.0.3** — e.g. RTX 2080 Ti ~59 TH/s. (GTX 16-series has no tensor cores and is not supported.)
