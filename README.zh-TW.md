@@ -33,7 +33,7 @@
 
 | 系統 | NVIDIA 驅動 | 下載 |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.1.10/tw-pearl-miner-windows.zip) — *Windows v2.2.x 版本即將推出* |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.1/tw-pearl-miner-windows.zip) |
 | **Linux**（桌面 / 伺服器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.1/tw-pearl-miner-linux.tar.gz) |
 | **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.2.1.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.1/tw-pearl-miner-2.2.1.tar.gz) |
 | **Linux** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-2.2.1-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.1/tw-pearl-miner-2.2.1-cuda12.tar.gz) |
