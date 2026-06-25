@@ -18,25 +18,26 @@
 
 | 50 | TH/s | 40 | TH/s | 30 | TH/s | DC | TH/s |
 |---|---|---|---|---|---|---|---|
-| 5090 | 370@575w | 4090 | 295.5@450w | 3090 | 108.6@347w | A100 | 206.1@398w |
-| 5090 | 330@505w | 4080 | 183@320w | 3080 Ti | 112.6@349w | H100 | 622.7@697w |
-| 5080 | 211.1@339w | 4070TS | 157.8@285w | 3080 | 98.5@319w | B200 | 1162@1000w |
-| 5070 Ti | 172.1@300w | 4070 Ti | 150.1@285w | 3070 Ti | 78.4@310w | PRO 6000 | 345@600w |
-| 5070 | 119.6@250w | 4070S | 126.7@220w | 3070 | 70.4@215w |  |  |
-| 5060 Ti | 89.5@180w | 4070 | 112.6@200w | 3060 Ti | 56.3@200w |  |  |
-| 5060 | 73.9@145w | 4060 Ti | 78.2@165w |  |  |  |  |
-|  |  | 4060 | 54.3@115w |  |  |  |  |
+| 5090 | 370@575w | 4090 | 299.3@450w | 3090 | 122.0@367w | A100 | 231.8@401w |
+| 5090 | 330@505w | 4080 | 185.3@320w | 3080Ti | 112.6@336w | H100 | 622.7@697w |
+| 5080 | 222.4@339w | 4080S | 190.0@319w | 3080 | 111.0@331w | B200 | 1213@970w |
+| 5070Ti | 173.9@300w | 4070TS | 160.3@285w | 3070Ti | 78.4@310w | PRO6000 | 345@600w |
+| 5070 | 119.6@250w | 4070Ti | 151.9@285w | 3070 | 75.0@239w |  |  |
+| 5060Ti 16GB | 89.5@180w | 4070S | 129.4@220w | 3060Ti | 58.0@199w |  |  |
+| 5060Ti 8GB | 81.6 | 4070 | 112.6@200w | 3060 | 45.7@170w |  |  |
+| 5060 | 76.1@145w | 4060Ti | 79.6@165w |  |  |  |  |
+|  |  | 4060 | 56.4@115w |  |  |  |  |
 
 未列出的型號同樣支援（Ampere 及更新，顯示記憶體 ≥ 8 GB），數值後續補充。資料中心卡的數值是 **SXM** 版本 —— **PCIe** 版本會略低一些。
 **RTX 20 系（Turing）** 自 **v2.0.3** 起支援 —— 例如 RTX 2080 Ti ~59 TH/s。（GTX 16 系無 Tensor Core，不支援。）
 
 | 系統 | NVIDIA 驅動 | 下載 |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.1.10/tw-pearl-miner-windows.zip) |
-| **Linux**（桌面 / 伺服器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.1.10/tw-pearl-miner-linux.tar.gz) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.1.10.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.1.10/tw-pearl-miner-2.1.10.tar.gz) |
-| **Linux** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-2.1.10-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.1.10/tw-pearl-miner-2.1.10-cuda12.tar.gz) |
-| **HiveOS** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-2.1.10.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.1.10/tw-pearl-miner-2.1.10.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.1/tw-pearl-miner-windows.zip) |
+| **Linux**（桌面 / 伺服器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.1/tw-pearl-miner-linux.tar.gz) |
+| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.2.1.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.1/tw-pearl-miner-2.2.1.tar.gz) |
+| **Linux** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-2.2.1-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.1/tw-pearl-miner-2.2.1-cuda12.tar.gz) |
+| **HiveOS** —— 舊驅動 | 570.26–580 | [tw-pearl-miner-2.2.1.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.1/tw-pearl-miner-2.2.1.c12.tar.gz) |
 
 ## 快速開始
 
@@ -64,7 +65,7 @@ pearl-gpu-miner.exe --pool us.pearl.herominers.com:1200 --wallet YOUR_WALLET.wor
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 
 # ……或手動：
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.1.10/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.1/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # 設定 WALLET=你的 prl1... 位址、POOL=你的礦池位址
 bash start.sh          # 選用：bash start.sh <worker名稱>

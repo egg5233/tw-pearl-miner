@@ -27,7 +27,7 @@ the pool.
             "miner_alt": "tw-pearl-miner",
             "miner_config": {
                 "algo": "pearlhash",
-                "install_url": "https://github.com/egg5233/tw-pearl-miner/releases/download/v2.1.2/tw-pearl-miner-2.1.2.tar.gz",
+                "install_url": "https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.1/tw-pearl-miner-2.2.1.tar.gz",
                 "miner": "tw-pearl-miner",
                 "pass": "x",
                 "template": "%WAL%.%WORKER_NAME%",
@@ -56,9 +56,9 @@ Prefer to set it up by hand? Follow the steps below.
    - **Miner name:** `tw-pearl-miner`
    - **Installation URL:**
      ```
-     https://github.com/egg5233/tw-pearl-miner/releases/download/v2.1.2/tw-pearl-miner-2.1.2.tar.gz
+     https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.1/tw-pearl-miner-2.2.1.tar.gz
      ```
-     (or `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-2.1.2.tar.gz`)
+     (or `https://github.com/egg5233/tw-pearl-miner/releases/latest/download/tw-pearl-miner-2.2.1.tar.gz`)
    - **Hash algorithm:** `pearl` (free text — informational only)
 3. Fill the flight-sheet fields:
    | Field | Value |
@@ -132,6 +132,6 @@ tw-pearl-miner/
 - **Stuck on a 570–580 driver (no CUDA 13)?** Use the **CUDA-12.8** package instead — same speed, runs
   on driver ≥ 570.26 (bundles `libcudart.so.12`):
   ```
-  https://github.com/egg5233/tw-pearl-miner/releases/download/v2.1.2/tw-pearl-miner-2.1.2.c12.tar.gz
+  https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.1/tw-pearl-miner-2.2.1.c12.tar.gz
   ```
 - **Hashrate units:** the miner reports TH/s; HiveOS scales it (`total khs` = `TH/s × 1e9`).
