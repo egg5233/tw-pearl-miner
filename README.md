@@ -31,10 +31,10 @@ Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to
 
 | System | NVIDIA driver | Download |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.3/tw-pearl-miner-windows.zip) |
-| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.3/tw-pearl-miner-linux.tar.gz) |
-| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-2.2.3-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.3/tw-pearl-miner-2.2.3-cuda12.tar.gz) |
-| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-2.2.3.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.3/tw-pearl-miner-2.2.3.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.4/tw-pearl-miner-windows.zip) |
+| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.4/tw-pearl-miner-linux.tar.gz) |
+| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-2.2.4-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.4/tw-pearl-miner-2.2.4-cuda12.tar.gz) |
+| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-2.2.4.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.2.4/tw-pearl-miner-2.2.4.c12.tar.gz) |
 
 ## Quick start
 
