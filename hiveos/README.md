@@ -45,7 +45,7 @@ the pool.
   payout address and `%WORKER_NAME%` to the rig name.
 - **`url`** is the pool — the example uses herominers HK (`hk.pearl.herominers.com:1200`). Change it to
   your own pool; for TLS or another transport add a scheme as described in *Pool URL* below.
-- **`install_url`** pins **v2.0.4** — bump it to the latest release tag when a newer version ships.
+- **`install_url`** pins **v2.3.0** — bump it to the latest release tag when a newer version ships.
 
 Prefer to set it up by hand? Follow the steps below.
 

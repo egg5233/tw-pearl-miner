@@ -44,7 +44,7 @@ NVIDIA 显卡（RTX 30/40/50、A100、H100）。
   `%WORKER_NAME%` 展开为矿机名。
 - **`url`** 是矿池 —— 示例用的是 herominers 香港（`hk.pearl.herominers.com:1200`）。请改成你自己的矿池；
   若要用 TLS 或其它传输方式，按下方 *Pool URL* 说明加上 scheme。
-- **`install_url`** 锁定在 **v2.0.4** —— 有新版本时改成最新的 release 标签。
+- **`install_url`** 锁定在 **v2.3.0** —— 有新版本时改成最新的 release 标签。
 
 想手动配置？按下面的步骤操作即可。
 
