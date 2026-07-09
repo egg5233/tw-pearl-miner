@@ -32,13 +32,10 @@
 
 | 系统 | NVIDIA 驱动 | 下载 |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.3.2/tw-pearl-miner-windows.zip) |
-| **Linux**（桌面 / 服务器） | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.3.2/tw-pearl-miner-linux.tar.gz) |
-| **HiveOS** | ≥ 580.65 | [tw-pearl-miner-2.3.2.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.3.2/tw-pearl-miner-2.3.2.tar.gz) |
-| **Linux** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-2.3.2-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.3.2/tw-pearl-miner-2.3.2-cuda12.tar.gz) |
-| **HiveOS** —— 旧驱动 | 570.26–580 | [tw-pearl-miner-2.3.2.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.3.2/tw-pearl-miner-2.3.2.c12.tar.gz) |
-| **MMPOS** | ≥ 580.65 | [tw-pearl-miner-2.3.2_mmpos.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.3.2/tw-pearl-miner-2.3.2_mmpos.tar.gz) |
-| **MMPOS** — 旧驱动 | 570.26–580 | [tw-pearl-miner-2.3.2_mmpos.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.3.2/tw-pearl-miner-2.3.2_mmpos.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.1.0/tw-pearl-miner-windows.zip) |
+| **Linux**（桌面 / 服务器） | ≥ 570.26 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.1.0/tw-pearl-miner-linux.tar.gz) |
+| **HiveOS** | ≥ 570.26 | [tw-pearl-miner-3.1.0.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.1.0/tw-pearl-miner-3.1.0.tar.gz) |
+| **MMPOS** | ≥ 570.26 | [tw-pearl-miner-3.1.0_mmpos.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.1.0/tw-pearl-miner-3.1.0_mmpos.tar.gz) |
 
 ## 快速开始
 
@@ -64,7 +61,7 @@ pearl-gpu-miner.exe --pool us.pearl.herominers.com:1200 --wallet YOUR_WALLET.wor
 curl -fsSL https://github.com/egg5233/tw-pearl-miner/raw/main/install.sh | bash
 
 # ……或手动：
-wget https://github.com/egg5233/tw-pearl-miner/releases/download/v2.3.2/tw-pearl-miner-linux.tar.gz
+wget https://github.com/egg5233/tw-pearl-miner/releases/download/v3.1.0/tw-pearl-miner-linux.tar.gz
 tar -xzf tw-pearl-miner-linux.tar.gz && cd tw-pearl-miner-linux
 nano start.sh          # 设置 WALLET=你的 prl1... 地址、POOL=你的矿池地址
 bash start.sh          # 可选：bash start.sh <worker名称>
@@ -100,10 +97,10 @@ pearl-gpu-miner --pool <矿池地址> --wallet <prl1...地址> [--worker <名称
 **系统要求**
 - **NVIDIA 显卡，Ampere 或更新**（RTX 30 / 40 / 50、A100、H100）。RTX 20 系（Turing，含 Tensor Core）自 v2.0.3 起支持；GTX 16xx（无 Tensor Core）及更早显卡不支持。
 - **显存 ≥ 8 GB**。8 GB / 10 GB 显卡（如 3060 Ti / 3070 / 3080 10G / 4060 Ti 8G / 5060 Ti 8G）自 v2.0.1 起**自动启用低显存模式**，速度不打折；≥ 12 GB 显卡行为完全不变。显存确实不足时会显示清晰的中英文提示并跳过该卡。
-- **NVIDIA 驱动 ≥ 580.65（Linux）/ ≥ 580.88（Windows）** 对应 CUDA 13 版本；或 **≥ 570.26** 对应 CUDA 12 版本。无需安装其他东西 —— CUDA 运行时已打包在内。
+- **NVIDIA 驱动 ≥ 570.26（Linux，CUDA 12 版本）/ ≥ 580.88（Windows，CUDA 13 版本）**。无需安装其他东西 —— CUDA 运行时已打包在内。
 - 矿池连接方式（TLS / 明文）取决于你的 `--pool` 协议前缀（见上面命令行说明）。
 
-> **驱动太旧？** 如果矿工一启动就退出并报 `cudaGetDeviceCount returned 0` 或 `pk_init failed`，说明驱动低于最低要求 —— 请**更新驱动**（这是驱动版本问题，不是显卡问题），或改用上面的 **CUDA 12** 版本。用 `nvidia-smi` 查看。
+> **驱动太旧？** 如果矿工一启动就退出并报 `cudaGetDeviceCount returned 0` 或 `pk_init failed`，说明驱动低于最低要求 —— 请**更新驱动**（这是驱动版本问题，不是显卡问题）。用 `nvidia-smi` 查看。
 
 > **杀毒软件误报？** 部分杀毒软件（含 Windows Defender）可能将矿工误报为威胁 —— 这是小体积挖矿程序的常见误报；如被拦截请将矿工目录加入排除清单。
 

@@ -31,12 +31,10 @@ Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to
 
 | System | NVIDIA driver | Download |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.3.2/tw-pearl-miner-windows.zip) |
-| **Linux** (desktop / server) | ≥ 580.65 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.3.2/tw-pearl-miner-linux.tar.gz) |
-| **Linux** — older driver | 570.26–580 | [tw-pearl-miner-2.3.2-cuda12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.3.2/tw-pearl-miner-2.3.2-cuda12.tar.gz) |
-| **HiveOS** — older driver | 570.26–580 | [tw-pearl-miner-2.3.2.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.3.2/tw-pearl-miner-2.3.2.c12.tar.gz) |
-| **MMPOS** | ≥ 580.65 | [tw-pearl-miner-2.3.2_mmpos.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.3.2/tw-pearl-miner-2.3.2_mmpos.tar.gz) |
-| **MMPOS** — older driver | 570.26–580 | [tw-pearl-miner-2.3.2_mmpos.c12.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v2.3.2/tw-pearl-miner-2.3.2_mmpos.c12.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.1.0/tw-pearl-miner-windows.zip) |
+| **Linux** (desktop / server) | ≥ 570.26 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.1.0/tw-pearl-miner-linux.tar.gz) |
+| **HiveOS** | ≥ 570.26 | [tw-pearl-miner-3.1.0.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.1.0/tw-pearl-miner-3.1.0.tar.gz) |
+| **MMPOS** | ≥ 570.26 | [tw-pearl-miner-3.1.0_mmpos.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.1.0/tw-pearl-miner-3.1.0_mmpos.tar.gz) |
 
 ## Quick start
 
@@ -93,10 +91,10 @@ The miner auto-picks the best matrix shape for your card, prints a periodic hash
 **Requirements**
 - **NVIDIA GPU, Ampere or newer** (RTX 30 / 40 / 50, A100, H100). RTX 20-series (Turing, tensor-core) supported since v2.0.3; GTX 16xx (no tensor cores) and pre-Turing not supported.
 - **≥ 8 GB VRAM.** 8 GB / 10 GB cards (e.g. 3060 Ti / 3070 / 3080 10G / 4060 Ti 8G / 5060 Ti 8G) **automatically use the low-VRAM mode** since v2.0.1 — no speed penalty; ≥ 12 GB cards are completely unchanged. If VRAM is genuinely insufficient, the miner shows a clear bilingual message and skips the card.
-- **NVIDIA driver ≥ 580.65 (Linux) / ≥ 580.88 (Windows)** for the CUDA 13 build, or **≥ 570.26** for the CUDA 12 build. Nothing else to install — the CUDA runtime ships in the bundle.
+- **NVIDIA driver ≥ 570.26 (Linux, CUDA 12 build) / ≥ 580.88 (Windows, CUDA 13 build).** Nothing else to install — the CUDA runtime ships in the bundle.
 - The pool connection transport (TLS / plaintext) follows your `--pool` scheme prefix (see the command line above).
 
-> **Driver too old?** If the miner exits immediately with `cudaGetDeviceCount returned 0` or `pk_init failed`, your driver is below the minimum — **update the driver** (a driver-version issue, not a GPU problem), or use the **CUDA 12** download above. Check with `nvidia-smi`.
+> **Driver too old?** If the miner exits immediately with `cudaGetDeviceCount returned 0` or `pk_init failed`, your driver is below the minimum — **update the driver** (a driver-version issue, not a GPU problem). Check with `nvidia-smi`.
 
 > **Antivirus false positive?** Some antivirus products (including Windows Defender) may falsely flag the miner — a common false positive for small mining binaries; add the miner folder to your exclusions if it gets quarantined.
 
