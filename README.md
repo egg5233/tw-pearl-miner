@@ -7,7 +7,6 @@
 ## Supported pools
 
 - [PearlFortune](https://pearlfortune.org) global.pearlfortune.org:8888  <--- Mining endpoint
-- [HeroMiners](https://pearl.herominers.com)
 - [AlphaPool](https://alphapool.tech)
 - [Kryptex](https://pool.kryptex.com/prl)
 - [LuckyPool](https://pearl.luckypool.io/)
