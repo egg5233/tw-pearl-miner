@@ -7,7 +7,6 @@
 ## 支援的礦池
 
 - [PearlFortune](https://pearlfortune.org)
-- [HeroMiners](https://pearl.herominers.com)
 - [AlphaPool](https://alphapool.tech)
 - [Kryptex](https://pool.kryptex.com/prl)
 - [LuckyPool](https://pearl.luckypool.io/)
