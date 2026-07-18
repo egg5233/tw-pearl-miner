@@ -31,11 +31,11 @@
 
 | 系统 | NVIDIA 驱动 | 下载 |
 |---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.1.1/tw-pearl-miner-windows.zip) |
-| **Linux**（桌面 / 服务器） | ≥ 570.26 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.1.1/tw-pearl-miner-linux.tar.gz) |
-| **HiveOS** | ≥ 570.26 | [tw-pearl-miner-3.1.1.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.1.1/tw-pearl-miner-3.1.1.tar.gz) |
-| **MMPOS** | ≥ 570.26 | [tw-pearl-miner-3.1.1_mmpos.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.1.1/tw-pearl-miner-3.1.1_mmpos.tar.gz) |
-| **B300**（数据中心） | ≥ 580 | [tw-pearl-miner-linux-b300.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.1.1/tw-pearl-miner-linux-b300.tar.gz) |
+| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.2.2/tw-pearl-miner-windows.zip) |
+| **Linux** (desktop / server) | ≥ 570.26 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.2.2/tw-pearl-miner-3.2.2.tar.gz) |
+| **HiveOS** | ≥ 570.26 | [tw-pearl-miner-3.1.1.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.2.2/tw-pearl-miner-3.2.2.tar.gz) |
+| **MMPOS** | ≥ 570.26 | [tw-pearl-miner-3.1.1_mmpos.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.2.2/tw-pearl-miner-3.2.2.tar.gz) |
+| **B300** (datacenter) | ≥ 580 | [tw-pearl-miner-linux-b300.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.2.2/tw-pearl-miner-linux-b300.tar.gz) |
 
 ## 快速开始
 
