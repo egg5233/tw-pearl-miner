@@ -11,7 +11,7 @@
 - [Kryptex](https://pool.kryptex.com/prl)
 - [LuckyPool](https://pearl.luckypool.io/)
 
-## Expected hashrate (*pool-effective *default oc/pl *tested on random vast gpu) 
+## Expected hashrate (*pool-effective *default oc/pl *tested on random vast gpu) RANK 128
 
 | 50 | TH/s | 40 | TH/s | 30 | TH/s | DC | TH/s |
 |---|---|---|---|---|---|---|---|
@@ -25,16 +25,9 @@
 |  | | 4060Ti | 79.6@165w |  |  |  |  |
 |  |  | 4060 | 56.4@115w |  |  |  |  |
 
-Models not listed are supported too (Ampere or newer, ≥ 8 GB VRAM); figures to be added. Datacenter figures are for the **SXM** variants — **PCIe** versions run somewhat lower.
-**RTX 20-series (Turing)** supported since **v2.0.3** — e.g. RTX 2080 Ti ~59 TH/s. (GTX 16-series has no tensor cores and is not supported.)
 
-| System | NVIDIA driver | Download |
-|---|---|---|
-| **Windows** | ≥ 580.88 | [tw-pearl-miner-windows.zip](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.2.2/tw-pearl-miner-windows.zip) |
-| **Linux** (desktop / server) | ≥ 570.26 | [tw-pearl-miner-linux.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.2.2/tw-pearl-miner-3.2.2.tar.gz) |
-| **HiveOS** | ≥ 570.26 | [tw-pearl-miner-3.1.1.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.2.2/tw-pearl-miner-3.2.2.tar.gz) |
-| **MMPOS** | ≥ 570.26 | [tw-pearl-miner-3.1.1_mmpos.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.2.2/tw-pearl-miner-3.2.2.tar.gz) |
-| **B300** (datacenter) | ≥ 580 | [tw-pearl-miner-linux-b300.tar.gz](https://github.com/egg5233/tw-pearl-miner/releases/download/v3.2.2/tw-pearl-miner-linux-b300.tar.gz) |
+## Download
+(https://github.com/egg5233/tw-pearl-miner/releases/)
 
 ## Quick start
 
