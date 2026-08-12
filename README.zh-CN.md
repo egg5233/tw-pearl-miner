@@ -5,13 +5,6 @@
 **开发者费用：1.5%**（矿工启动时亦会显示）。
 
 
-## 支持的矿池
-
-- [PearlFortune](https://pearlfortune.org)
-- [AlphaPool](https://alphapool.tech)
-- [Kryptex](https://pool.kryptex.com/prl)
-- [LuckyPool](https://pearl.luckypool.io/)
-
 ## 预期算力 (pool-effective*) , rank 128
 
 | 50 | TH/s | 40 | TH/s | 30 | TH/s | DC | TH/s |
