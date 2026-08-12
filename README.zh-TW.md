@@ -4,13 +4,6 @@
 
 **開發者費用：1.5%**（挖礦程式啟動時亦會顯示）。
 
-## 支援的礦池
-
-- [PearlFortune](https://pearlfortune.org)
-- [AlphaPool](https://alphapool.tech)
-- [Kryptex](https://pool.kryptex.com/prl)
-- [LuckyPool](https://pearl.luckypool.io/)
-
 ## 預期算力 (pool-effective) rank 128
 
 每張卡在挖礦程式**自動選擇**形狀下的大致 Pearl 算力（**預設頻率**）。功耗牆 / 超頻可再加幾個百分點；**實際數值依礦池 / 難度而異**，也因主機與散熱不同。
