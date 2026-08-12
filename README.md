@@ -4,13 +4,6 @@
 
 **Dev fee: 1.5%** (also shown at miner startup).
 
-## Supported pools
-
-- [PearlFortune](https://pearlfortune.org) global.pearlfortune.org:8888  <--- Mining endpoint
-- [AlphaPool](https://alphapool.tech)
-- [Kryptex](https://pool.kryptex.com/prl)
-- [LuckyPool](https://pearl.luckypool.io/)
-
 ## Expected hashrate (*pool-effective *default oc/pl *tested on random vast gpu) RANK 128
 
 | 50 | TH/s | 40 | TH/s | 30 | TH/s | DC | TH/s |
