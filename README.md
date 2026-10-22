@@ -8,15 +8,36 @@
 
 | 50 | TH/s | 40 | TH/s | 30 | TH/s | DC | TH/s |
 |---|---|---|---|---|---|---|---|
-| 5090 | 382@575w | 4090 | 299.3@450w | 3090 | TBD | A100 | TBD |
-| 5090 | 330@505w | 4080S | 189.6@320w | 3080Ti | TBD | H100 | TBD |
-| 5080 | 211  0@339w | 4080S | 185.0@319w | 3080 | TBD| B200 | 900@1000w |
-| 5070Ti | 175.9@300w | 4070TS | 158.2@285w | 3070Ti | TBD | PRO6000 | TBD |
+| 5090 | 348.8†@600w | 4090 | 266.5†@450w | 3090 | TBD | A100 | 202.5†@400w |
+| 5090 | 330@505w | 4080S | 189.6@320w | 3080Ti | TBD | H100 | 582.4†@700w |
+| 5080 | 185.5†@360w | 4080 | 185.0@319w | 3080 | TBD | B200 | 893.5†@1000w |
+| 5070Ti | 194.9†@300w | 4070TS | 158.2@285w | 3070Ti | TBD | PRO6000 | 356.3†@600w |
 | 5070 | 124@250w | 4070Ti | 151.1@285w | 3070 | TBD |  |  |
-| 5060Ti | 91.7@180w | 4070S | 129.4@220w | 3060Ti | TBD |  |  |
+| 5060Ti | 110.6†@180w | 4070S | 129.4@220w | 3060Ti | TBD |  |  |
 | 5060 | 74.7@155w | 4070 | 114.5@200w | 3060 | TBD |  |  |
 |  | | 4060Ti | 79.6@165w |  |  |  |  |
 |  |  | 4060 | 56.4@115w |  |  |  |  |
+
+† **Credited (pool-effective) rate of the shipped v3.5.1**, measured on a rented stock card on
+kryptex, 2026-10-22. Credited = difficulty of accepted shares ÷ window time, so it already carries
+stale/reject loss. Power is the limit actually applied during the run. Rows **without** † are
+earlier figures of mixed basis — some of them are the miner's own *displayed* rate, which runs up to
+~12 % above credited — and are being re-measured.
+
+| † card | Credited TH/s | Applied power / stock TDP | Accepted shares | 95 % CI (Poisson, our share count only) |
+|---|---:|---|---:|---:|
+| RTX 5090 | 348.8 | 600 W / 575 W (box board default was 600 W) | 395 | ±9.9 % |
+| RTX 4090 | 266.5 | 450 W / 450 W | 302 | ±11.3 % |
+| RTX 5080 | 185.5 | 360 W / 360 W | 99 | ±19.7 % |
+| RTX 5070 Ti | 194.9 | 300 W / 300 W | 104 | ±19.2 % |
+| RTX 5060 Ti | 110.6 | 180 W / 180 W | 59 | ±25.5 % |
+| A100 SXM4 | 202.5 | 400 W / 400 W | 108 | ±18.9 % |
+| H100 SXM | 582.4 | 700 W / 700 W | 660 | ±7.6 % |
+| B200 | 893.5 | 1000 W / 1000 W | 1012 | ±6.2 % |
+| RTX PRO 6000 WS | 356.3 | 600 W / 600 W | 95 | ±20.1 % |
+
+The CI is Poisson on our own accepted-share count (±1.96/√N) and does **not** cover across-leg drift,
+host variation or thermals. Single rented sample per card; your rig will differ.
 
 
 ## Download
